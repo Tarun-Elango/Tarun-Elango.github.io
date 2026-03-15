@@ -1,0 +1,18 @@
+site_name: Tarun's Research Notes
+site_description: Notes on software engineering, distributed systems, and cryptography
+site_author: Tarun
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Writings:
+      - Offline computing: offline-computing.md
+      - TCP hole punching: tcp-hole-punching.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
