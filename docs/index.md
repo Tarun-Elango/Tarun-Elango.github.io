@@ -34,4 +34,4 @@ Topics I often explore:
 - caching
 - distributed systems
 - algorithms
-- networking
+- networking.
