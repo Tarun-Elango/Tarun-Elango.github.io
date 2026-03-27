@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Notes on software engineering, distributed systems, and cryptography">
+        <meta name="description" content="Notes on computer engineering.">
       
       
         <meta name="author" content="Tarun">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Memory-Safe Symmetric Encryption in C++ and libsodium - Tarun's Research Corner</title>
+        <title>Memory-Hardened Symmetric Encryption in C++ with libsodium - Tarun's Research Corner</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Memory-Safe Symmetric Encryption in C++ and libsodium
+              Memory-Hardened Symmetric Encryption in C++ with libsodium
             
           </span>
         </div>
@@ -375,7 +375,7 @@
   <span class="md-ellipsis">
     
   
-    Memory-Safe Symmetric Encryption in C++ and libsodium
+    Memory-Hardened Symmetric Encryption in C++ with libsodium
   
 
     
@@ -393,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    Memory-Safe Symmetric Encryption in C++ and libsodium
+    Memory-Hardened Symmetric Encryption in C++ with libsodium
   
 
     
@@ -449,9 +449,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#phase-1-get-input-message" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -461,8 +462,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#phase-2-get-passphrase" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -472,8 +473,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#phase-3-key-derivation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -483,8 +484,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#phase-4-encrypt_message" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -494,15 +495,9 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ---
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -562,19 +557,19 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#todo" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        TODO
+        Future improvements
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -659,9 +654,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#phase-1-get-input-message" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -671,8 +667,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#phase-2-get-passphrase" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -682,8 +678,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#phase-3-key-derivation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -693,8 +689,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#phase-4-encrypt_message" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -704,15 +700,9 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ---
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -772,19 +762,19 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#todo" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        TODO
+        Future improvements
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -811,52 +801,52 @@
 <li><a href="#purpose">Purpose</a></li>
 <li><a href="#how-it-works">How it works</a></li>
 <li><a href="#how-to-build-and-run">How to Build and Run</a></li>
-<li><a href="#todo">TODO - future improvements</a></li>
+<li><a href="#future-improvements">TODO - future improvements</a></li>
 <li><a href="https://github.com/Tarun-Elango/symmetric-encryption">GitHub Repo</a></li>
 </ul>
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<p>Encrypt and decrypt messages using libsodium's <strong>crypto_aead_xchacha20poly1305_ietf_encrypt</strong> function. </p>
-<p>Secret material — plaintext, passphrase, and derived key — is confined to sodium_malloc'd regions for the lifetime of each value:</p>
+<p>Encrypt and decrypt messages using libsodium's <strong>crypto_aead_xchacha20poly1305_ietf_encrypt</strong> function. In simple terms, encrypt a message with a password, and decrypt it with the same password. But with hardened memory management.</p>
+<p>Secret material such as <u>plaintext message, passphrase, and derived key</u>  is confined to sodium_malloc'd regions for the lifetime of each value:</p>
 <ul>
-<li>mlock'd — pages are pinned in RAM, preventing swap to disk</li>
-<li>mprotect'd — memory is set to no-access by default; unlocked read-only only for the duration of each cryptographic call, then re-locked immediately after</li>
-<li>zeroed on release — sodium_free guarantees a secure wipe before the region is returned to the OS</li>
+<li>mlock'd — pages are pinned in RAM, preventing swap to disk.</li>
+<li>mprotect'd — memory is set to no-access by default; unlocked read-only only for the duration of each cryptographic call, then re-locked immediately after.</li>
+<li>zeroed on release — sodium_free guarantees a secure wipe before the region is returned to the OS.</li>
 </ul>
 <p><strong>Note</strong>: this reduces key exposure risk by keeping private content in secure buffer while also making sure the memory region is manually wiped after use, but does not provide formal memory-safety guarantees for all C++ code paths. Created for learning purposes.</p>
 <hr />
 <h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<p>There are four phases to the encryption process:
-- Phase 1 — Get Input Message
-- Phase 2 — Get Passphrase/password
-- Phase 3 — Key Derivation ( passphrase + salt → key )
-- Phase 4 — encrypt_message ( message + key + nonce → ciphertext )</p>
-<p><em>Wont be explaining the decryption process here, but it is very similar</em></p>
-<h2 id="phase-1-get-input-message">Phase 1 — Get Input Message<a class="headerlink" href="#phase-1-get-input-message" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">flowchart</span><span class="w"> </span><span class="n">TD</span>
-<span class="w">    </span><span class="n">A</span><span class="p">([</span><span class="n">do_encrypt</span><span class="w"> </span><span class="n">called</span><span class="p">])</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">[</span><span class="n">get_message_secure</span><span class="w"> </span><span class="n">prompt</span><span class="p">]</span>
+<p>There are four phases to the encryption process:</p>
+<ul>
+<li>Phase 1 — Get Input Message  </li>
+<li>Phase 2 — Get Passphrase/password  </li>
+<li>Phase 3 — Key Derivation (passphrase + salt → key)  </li>
+<li>Phase 4 — encrypt_message (message + key + nonce → ciphertext)</li>
+</ul>
+<p><em>Wont be explaining the decryption process here, but it is very similar.</em></p>
+<h3 id="phase-1-get-input-message">Phase 1 — Get Input Message<a class="headerlink" href="#phase-1-get-input-message" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    A([do_encrypt called]) --&gt; B[get_message_secure prompt]
 
-<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">[</span><span class="s">&quot;ScopedTermios</span><span class="se">\n</span><span class="s">disables ECHO + ICANON&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="s">&quot;SecureBuffer buf</span><span class="se">\n</span><span class="s">sodium_malloc 16 KB</span><span class="se">\n</span><span class="s">state: R/W&quot;</span><span class="p">]</span>
+    B --&gt; C["ScopedTermios\ndisables ECHO + ICANON"]
+    C --&gt; D["SecureBuffer buf\nsodium_malloc 16 KB\nstate: R/W"]
 
-<span class="w">    </span><span class="n">D</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">E</span><span class="p">{</span><span class="n">read</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">loop</span><span class="err">\</span><span class="n">ngetchar</span><span class="p">}</span>
-<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s">&quot;printable char&quot;</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="s">&quot;buf.data\[len++\] = ch</span><span class="se">\n</span><span class="s">echo char to stdout&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="n">F</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">E</span>
-<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s">&quot;DEL / backspace&quot;</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">G</span><span class="p">[</span><span class="s">&quot;buf.data\[--len\] = 0</span><span class="se">\n</span><span class="s">erase display char&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="n">G</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">E</span>
-<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s">&quot;newline / EOF&quot;</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">H</span><span class="p">[</span><span class="s">&quot;buf.set_size(len)</span><span class="se">\n</span><span class="s">trim live byte count&quot;</span><span class="p">]</span>
+    D --&gt; E{read char loop\ngetchar}
+    E -- "printable char" --&gt; F["buf.data\[len++\] = ch\necho char to stdout"]
+    F --&gt; E
+    E -- "DEL / backspace" --&gt; G["buf.data\[--len\] = 0\nerase display char"]
+    G --&gt; E
+    E -- "newline / EOF" --&gt; H["buf.set_size(len)\ntrim live byte count"]
 
-<span class="w">    </span><span class="n">H</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">I</span><span class="p">{</span><span class="n">len</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="o">?</span><span class="p">}</span>
-<span class="w">    </span><span class="n">I</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">yes</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">J</span><span class="p">([</span><span class="k">return</span><span class="w"> </span><span class="n">nullopt</span><span class="err">\</span><span class="n">nno</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="n">entered</span><span class="p">])</span>
-<span class="w">    </span><span class="n">I</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">K</span><span class="p">[</span><span class="s">&quot;buf.lock_access()</span><span class="se">\n</span><span class="s">state: NO ACCESS&quot;</span><span class="p">]</span>
+    H --&gt; I{len == 0?}
+    I -- yes --&gt; J([return nullopt\nno message entered])
+    I -- no --&gt; K["buf.lock_access()\nstate: NO ACCESS"]
 
-<span class="w">    </span><span class="n">K</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">L</span><span class="p">([</span><span class="k">return</span><span class="w"> </span><span class="n">Optional</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">SecureBuffer</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="err">\</span><span class="n">nstate</span><span class="o">:</span><span class="w"> </span><span class="nb">NO</span><span class="w"> </span><span class="n">ACCESS</span><span class="p">])</span>
+    K --&gt; L([return Optional&amp;lt;SecureBuffer&amp;gt;\nstate: NO ACCESS])
 
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">D3D1C7</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mf">5F5E5</span><span class="n">A</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">2</span><span class="n">C2C2A</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="mf">9F</span><span class="n">E1CB</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mf">0F6E56</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">085041</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">F5C4B3</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mi">993</span><span class="n">C1D</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">4</span><span class="n">A1B0C</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">F5C4B3</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mi">993</span><span class="n">C1D</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">4</span><span class="n">A1B0C</span>
-</code></pre></div>
-
+    style C fill:#D3D1C7,stroke:#5F5E5A,color:#2C2C2A
+    style D fill:#9FE1CB,stroke:#0F6E56,color:#085041
+    style K fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C
+    style L fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C</code></pre>
 <p><strong>Buffer state summary</strong></p>
 <table>
 <thead>
@@ -889,38 +879,36 @@
 </tbody>
 </table>
 <hr />
-<h2 id="phase-2-get-passphrase">Phase 2 — Get Passphrase<a class="headerlink" href="#phase-2-get-passphrase" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">flowchart</span><span class="w"> </span><span class="n">TD</span>
-<span class="w">    </span><span class="n">A</span><span class="p">([</span><span class="n">get_passphrase_with_confirmation</span><span class="w"> </span><span class="n">called</span><span class="p">])</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">B</span>
+<h3 id="phase-2-get-passphrase">Phase 2 — Get Passphrase<a class="headerlink" href="#phase-2-get-passphrase" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    A([get_passphrase_with_confirmation called]) --&gt; B
 
-<span class="w">    </span><span class="n">subgraph</span><span class="w"> </span><span class="n">LOOP</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;retry loop — until passphrases match&quot;</span><span class="p">]</span>
-<span class="w">        </span><span class="n">B</span><span class="p">[</span><span class="s">&quot;get_passphrase</span><span class="se">\n</span><span class="s">&#39;Passphrase :&#39;&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">[</span><span class="s">&quot;ScopedTermios</span><span class="se">\n</span><span class="s">disables ECHO + ICANON + ISIG&quot;</span><span class="p">]</span>
-<span class="w">        </span><span class="n">C</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="s">&quot;SecureBuffer p1</span><span class="se">\n</span><span class="s">sodium_malloc 4 KB</span><span class="se">\n</span><span class="s">state: R/W&quot;</span><span class="p">]</span>
-<span class="w">        </span><span class="n">D</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">E</span><span class="p">[</span><span class="s">&quot;read chars into p1</span><span class="se">\n</span><span class="s">no echo to terminal&quot;</span><span class="p">]</span>
-<span class="w">        </span><span class="n">E</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="s">&quot;p1.set_size(len)</span><span class="se">\n</span><span class="s">p1.lock_access()</span><span class="se">\n</span><span class="s">state: NO ACCESS&quot;</span><span class="p">]</span>
+    subgraph LOOP ["retry loop — until passphrases match"]
+        B["get_passphrase\n'Passphrase :'"] --&gt; C["ScopedTermios\ndisables ECHO + ICANON + ISIG"]
+        C --&gt; D["SecureBuffer p1\nsodium_malloc 4 KB\nstate: R/W"]
+        D --&gt; E["read chars into p1\nno echo to terminal"]
+        E --&gt; F["p1.set_size(len)\np1.lock_access()\nstate: NO ACCESS"]
 
-<span class="w">        </span><span class="n">F</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">G</span><span class="p">[</span><span class="s">&quot;get_passphrase</span><span class="se">\n</span><span class="s">&#39;Confirm passphrase :&#39;&quot;</span><span class="p">]</span>
-<span class="w">        </span><span class="n">G</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">H</span><span class="p">[</span><span class="s">&quot;SecureBuffer p2</span><span class="se">\n</span><span class="s">sodium_malloc 4 KB</span><span class="se">\n</span><span class="s">state: R/W&quot;</span><span class="p">]</span>
-<span class="w">        </span><span class="n">H</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">I</span><span class="p">[</span><span class="s">&quot;read chars into p2</span><span class="se">\n</span><span class="s">no echo to terminal&quot;</span><span class="p">]</span>
-<span class="w">        </span><span class="n">I</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">J</span><span class="p">[</span><span class="s">&quot;p2.set_size(len)</span><span class="se">\n</span><span class="s">p2.lock_access()</span><span class="se">\n</span><span class="s">state: NO ACCESS&quot;</span><span class="p">]</span>
+        F --&gt; G["get_passphrase\n'Confirm passphrase :'"]
+        G --&gt; H["SecureBuffer p2\nsodium_malloc 4 KB\nstate: R/W"]
+        H --&gt; I["read chars into p2\nno echo to terminal"]
+        I --&gt; J["p2.set_size(len)\np2.lock_access()\nstate: NO ACCESS"]
 
-<span class="w">        </span><span class="n">J</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">K</span><span class="p">[</span><span class="s">&quot;SecureAccessGuard p1 + p2</span><span class="se">\n</span><span class="s">state: READ-ONLY (scoped)</span><span class="se">\n</span><span class="s">sodium_memcmp(p1, p2)</span><span class="se">\n</span><span class="s">constant-time compare&quot;</span><span class="p">]</span>
-<span class="w">        </span><span class="n">K</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s">&quot;no match&quot;</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">L</span><span class="p">[</span><span class="s">&quot;print mismatch warning</span><span class="se">\n</span><span class="s">p1 + p2 destroyed</span><span class="se">\n</span><span class="s">sodium_free zeros memory&quot;</span><span class="p">]</span>
-<span class="w">        </span><span class="n">L</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">B</span>
-<span class="w">    </span><span class="n">end</span>
+        J --&gt; K["SecureAccessGuard p1 + p2\nstate: READ-ONLY (scoped)\nsodium_memcmp(p1, p2)\nconstant-time compare"]
+        K -- "no match" --&gt; L["print mismatch warning\np1 + p2 destroyed\nsodium_free zeros memory"]
+        L --&gt; B
+    end
 
-<span class="w">    </span><span class="n">K</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s">&quot;match&quot;</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="s">&quot;guards destruct</span><span class="se">\n</span><span class="s">p1 + p2 -&gt; NO ACCESS&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="n">M</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">N</span><span class="p">[</span><span class="s">&quot;p2 destroyed</span><span class="se">\n</span><span class="s">sodium_free zeros memory&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="n">N</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">O</span><span class="p">([</span><span class="k">return</span><span class="w"> </span><span class="n">SecureBuffer</span><span class="w"> </span><span class="n">p1</span><span class="err">\</span><span class="n">nstate</span><span class="o">:</span><span class="w"> </span><span class="nb">NO</span><span class="w"> </span><span class="n">ACCESS</span><span class="p">])</span>
+    K -- "match" --&gt; M["guards destruct\np1 + p2 -&gt; NO ACCESS"]
+    M --&gt; N["p2 destroyed\nsodium_free zeros memory"]
+    N --&gt; O([return SecureBuffer p1\nstate: NO ACCESS])
 
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="mf">9F</span><span class="n">E1CB</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mf">0F6E56</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">085041</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="mf">9F</span><span class="n">E1CB</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mf">0F6E56</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">085041</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">B5D4F4</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mf">185F</span><span class="n">A5</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mo">042</span><span class="n">C53</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">D3D1C7</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mf">5F5E5</span><span class="n">A</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">2</span><span class="n">C2C2A</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">F5C4B3</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mi">993</span><span class="n">C1D</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">4</span><span class="n">A1B0C</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">F7C1C1</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="n">A32D2D</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">501313</span>
-</code></pre></div>
-
+    style D fill:#9FE1CB,stroke:#0F6E56,color:#085041
+    style H fill:#9FE1CB,stroke:#0F6E56,color:#085041
+    style K fill:#B5D4F4,stroke:#185FA5,color:#042C53
+    style N fill:#D3D1C7,stroke:#5F5E5A,color:#2C2C2A
+    style O fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C
+    style L fill:#F7C1C1,stroke:#A32D2D,color:#501313</code></pre>
 <p><strong>Buffer state summary</strong></p>
 <table>
 <thead>
@@ -953,36 +941,34 @@
 </tbody>
 </table>
 <hr />
-<h2 id="phase-3-key-derivation">Phase 3 — Key Derivation<a class="headerlink" href="#phase-3-key-derivation" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">flowchart</span><span class="w"> </span><span class="n">TD</span>
-<span class="w">    </span><span class="n">A</span><span class="p">([</span><span class="s">&quot;passphrase SecureBuffer\nstate: NO ACCESS&quot;</span><span class="p">])</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">C</span>
-<span class="w">    </span><span class="n">B</span><span class="p">([</span><span class="s">&quot;salt\[32\] stack array\nrandombytes_buf&quot;</span><span class="p">])</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">D</span>
+<h3 id="phase-3-key-derivation">Phase 3 — Key Derivation<a class="headerlink" href="#phase-3-key-derivation" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    A(["passphrase SecureBuffer\nstate: NO ACCESS"]) --&gt; C
+    B(["salt\[32\] stack array\nrandombytes_buf"]) --&gt; D
 
-<span class="w">    </span><span class="n">C</span><span class="p">[</span><span class="s">&quot;SecureAccessGuard pp_guard\nunlock_read on passphrase\nstate: READ-ONLY&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">D</span>
+    C["SecureAccessGuard pp_guard\nunlock_read on passphrase\nstate: READ-ONLY"] --&gt; D
 
-<span class="w">    </span><span class="n">D</span><span class="p">[</span><span class="s">&quot;SecureBuffer key 32 bytes\nsodium_malloc\nstate: R/W&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">E</span>
+    D["SecureBuffer key 32 bytes\nsodium_malloc\nstate: R/W"] --&gt; E
 
-<span class="w">    </span><span class="n">E</span><span class="p">[</span><span class="s">&quot;crypto_pwhash — Argon2id\nOPSLIMIT_SENSITIVE\nMEMLIMIT_SENSITIVE\nwrites derived key into key buffer&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">F</span>
+    E["crypto_pwhash — Argon2id\nOPSLIMIT_SENSITIVE\nMEMLIMIT_SENSITIVE\nwrites derived key into key buffer"] --&gt; F
 
-<span class="w">    </span><span class="n">F</span><span class="p">[</span><span class="s">&quot;sodium_stackzero 2048\nbest-effort stack wipe\nafter KDF returns&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">G</span>
+    F["sodium_stackzero 2048\nbest-effort stack wipe\nafter KDF returns"] --&gt; G
 
-<span class="w">    </span><span class="n">G</span><span class="p">{</span><span class="n">pwhash</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="o">?</span><span class="p">}</span>
-<span class="w">    </span><span class="n">G</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s">&quot;fail — OOM&quot;</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">H</span><span class="p">([</span><span class="s">&quot;throw runtime_error\npp_guard destructs\npassphrase → NO ACCESS&quot;</span><span class="p">])</span>
-<span class="w">    </span><span class="n">G</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s">&quot;success&quot;</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">I</span>
+    G{pwhash result == 0?}
+    G -- "fail — OOM" --&gt; H(["throw runtime_error\npp_guard destructs\npassphrase → NO ACCESS"])
+    G -- "success" --&gt; I
 
-<span class="w">    </span><span class="n">I</span><span class="p">[</span><span class="s">&quot;key.lock_access()\nstate: NO ACCESS&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">J</span><span class="p">[</span><span class="s">&quot;pp_guard destructs\npassphrase → NO ACCESS&quot;</span><span class="p">]</span>
+    I["key.lock_access()\nstate: NO ACCESS"] --&gt; J["pp_guard destructs\npassphrase → NO ACCESS"]
 
-<span class="w">    </span><span class="n">J</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">K</span><span class="p">([</span><span class="s">&quot;return SecureBuffer key\nstate: NO ACCESS&quot;</span><span class="p">])</span>
+    J --&gt; K(["return SecureBuffer key\nstate: NO ACCESS"])
 
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">FAC775</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mf">854F</span><span class="mi">0</span><span class="n">B</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">412402</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="mf">9F</span><span class="n">E1CB</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mf">0F6E56</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">085041</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">B5D4F4</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mf">185F</span><span class="n">A5</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mo">042</span><span class="n">C53</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">D3D1C7</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mf">5F5E5</span><span class="n">A</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">2</span><span class="n">C2C2A</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">F5C4B3</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mi">993</span><span class="n">C1D</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">4</span><span class="n">A1B0C</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">F5C4B3</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="mi">993</span><span class="n">C1D</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">4</span><span class="n">A1B0C</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="n">fill</span><span class="o">:</span><span class="err">#</span><span class="n">F7C1C1</span><span class="p">,</span><span class="n">stroke</span><span class="o">:</span><span class="err">#</span><span class="n">A32D2D</span><span class="p">,</span><span class="n">color</span><span class="o">:</span><span class="err">#</span><span class="mi">501313</span>
-</code></pre></div>
-
+    style C fill:#FAC775,stroke:#854F0B,color:#412402
+    style D fill:#9FE1CB,stroke:#0F6E56,color:#085041
+    style E fill:#B5D4F4,stroke:#185FA5,color:#042C53
+    style F fill:#D3D1C7,stroke:#5F5E5A,color:#2C2C2A
+    style I fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C
+    style K fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C
+    style H fill:#F7C1C1,stroke:#A32D2D,color:#501313</code></pre>
 <p><strong>Buffer state summary</strong></p>
 <table>
 <thead>
@@ -1019,52 +1005,50 @@
 </tbody>
 </table>
 <hr />
-<h2 id="phase-4-encrypt_message">Phase 4 — encrypt_message<a class="headerlink" href="#phase-4-encrypt_message" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">flowchart</span><span class="w"> </span><span class="n">TD</span>
-<span class="w">    </span><span class="n">A</span><span class="p">([</span><span class="s">&quot;plaintext SecureBuffer</span><span class="se">\n</span><span class="s">state: NO ACCESS&quot;</span><span class="p">])</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">E</span>
-<span class="w">    </span><span class="n">B</span><span class="p">([</span><span class="s">&quot;passphrase SecureBuffer</span><span class="se">\n</span><span class="s">state: NO ACCESS&quot;</span><span class="p">])</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">C</span>
-<span class="w">    </span><span class="n">C</span><span class="p">[</span><span class="s">&quot;derive_key passphrase, salt</span><span class="se">\n</span><span class="s">see phase 3&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">D</span><span class="p">([</span><span class="s">&quot;key SecureBuffer</span><span class="se">\n</span><span class="s">state: NO ACCESS&quot;</span><span class="p">])</span>
+<h3 id="phase-4-encrypt_message">Phase 4 — encrypt_message<a class="headerlink" href="#phase-4-encrypt_message" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    A(["plaintext SecureBuffer\nstate: NO ACCESS"]) --&gt; E
+    B(["passphrase SecureBuffer\nstate: NO ACCESS"]) --&gt; C
+    C["derive_key passphrase, salt\nsee phase 3"] --&gt; D(["key SecureBuffer\nstate: NO ACCESS"])
 
-<span class="w">    </span><span class="n">D</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">E</span>
-<span class="w">    </span><span class="n">GEN</span><span class="p">[</span><span class="s">&quot;randombytes_buf</span><span class="se">\n</span><span class="s">nonce\[24\] stack</span><span class="se">\n</span><span class="s">salt\[32\] stack&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">E</span>
+    D --&gt; E
+    GEN["randombytes_buf\nnonce\[24\] stack\nsalt\[32\] stack"] --&gt; E
 
-<span class="w">    </span><span class="n">E</span><span class="p">[</span><span class="s">&quot;EncryptStackWiper registered</span><span class="se">\n</span><span class="s">will wipe salt + nonce on scope exit&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">F</span>
+    E["EncryptStackWiper registered\nwill wipe salt + nonce on scope exit"] --&gt; F
 
-<span class="w">    </span><span class="n">F</span><span class="p">[</span><span class="s">&quot;SecureAccessGuard pt_guard</span><span class="se">\n</span><span class="s">plaintext → READ-ONLY</span><span class="se">\n</span><span class="s">SecureAccessGuard key_guard</span><span class="se">\n</span><span class="s">key → READ-ONLY&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">G</span>
+    F["SecureAccessGuard pt_guard\nplaintext → READ-ONLY\nSecureAccessGuard key_guard\nkey → READ-ONLY"] --&gt; G
 
-<span class="w">    </span><span class="n">G</span><span class="p">[</span><span class="s">&quot;crypto_aead_xchacha20poly1305_ietf_encrypt</span><span class="se">\n</span><span class="s">ciphertext_buf = plaintext + TAG_LEN 16 B</span><span class="se">\n</span><span class="s">Poly1305 authentication tag appended&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">H</span>
+    G["crypto_aead_xchacha20poly1305_ietf_encrypt\nciphertext_buf = plaintext + TAG_LEN 16 B\nPoly1305 authentication tag appended"] --&gt; H
 
-<span class="w">    </span><span class="n">H</span><span class="p">[</span><span class="s">&quot;pt_guard + key_guard destruct</span><span class="se">\n</span><span class="s">plaintext → NO ACCESS</span><span class="se">\n</span><span class="s">key → NO ACCESS&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">I</span>
+    H["pt_guard + key_guard destruct\nplaintext → NO ACCESS\nkey → NO ACCESS"] --&gt; I
 
-<span class="w">    </span><span class="n">I</span><span class="p">{</span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">0</span><span class="o">?</span><span class="p">}</span>
-<span class="w">    </span><span class="n">I</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s">&quot;fail&quot;</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">J</span><span class="p">([</span><span class="s">&quot;throw runtime_error</span><span class="se">\n</span><span class="s">EncryptStackWiper fires</span><span class="se">\n</span><span class="s">nonce + salt wiped&quot;</span><span class="p">])</span>
+    I{result == 0?}
+    I -- "fail" --&gt; J(["throw runtime_error\nEncryptStackWiper fires\nnonce + salt wiped"])
 
-<span class="w">    </span><span class="n">I</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="s">&quot;success&quot;</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">K</span><span class="p">[</span><span class="s">&quot;b64_encode salt</span><span class="se">\n</span><span class="s">b64_encode nonce</span><span class="se">\n</span><span class="s">b64_encode ciphertext_buf&quot;</span><span class="p">]</span>
+    I -- "success" --&gt; K["b64_encode salt\nb64_encode nonce\nb64_encode ciphertext_buf"]
 
-<span class="w">    </span><span class="n">K</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">L</span><span class="p">[</span><span class="s">&quot;joined = b64_salt : b64_nonce : b64_ct</span><span class="se">\n</span><span class="s">copy into SecureBuffer output&quot;</span><span class="p">]</span>
+    K --&gt; L["joined = b64_salt : b64_nonce : b64_ct\ncopy into SecureBuffer output"]
 
-<span class="w">    </span><span class="n">L</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="s">&quot;sodium_memzero on</span><span class="se">\n</span><span class="s">b64 strings + joined string</span><span class="se">\n</span><span class="s">wipe std::string heap memory&quot;</span><span class="p">]</span>
+    L --&gt; M["sodium_memzero on\nb64 strings + joined string\nwipe std::string heap memory"]
 
-<span class="w">    </span><span class="n">M</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">N</span><span class="p">[</span><span class="s">&quot;sodium_memzero ciphertext_buf</span><span class="se">\n</span><span class="s">wipe std::vector plaintext copy&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">O</span>
+    M --&gt; N["sodium_memzero ciphertext_buf\nwipe std::vector plaintext copy"] --&gt; O
 
-<span class="w">    </span><span class="n">O</span><span class="p">[</span><span class="s">&quot;EncryptStackWiper destructs</span><span class="se">\n</span><span class="s">wipes salt\[32\] + nonce\[24\] on stack</span><span class="se">\n</span><span class="s">sodium_stackzero 1024&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">P</span>
+    O["EncryptStackWiper destructs\nwipes salt\[32\] + nonce\[24\] on stack\nsodium_stackzero 1024"] --&gt; P
 
-<span class="w">    </span><span class="n">P</span><span class="p">[</span><span class="s">&quot;output.lock_access()</span><span class="se">\n</span><span class="s">state: NO ACCESS&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Q</span>
+    P["output.lock_access()\nstate: NO ACCESS"] --&gt; Q
 
-<span class="w">    </span><span class="n">Q</span><span class="p">([</span><span class="s">&quot;return SecureBuffer output</span><span class="se">\n</span><span class="s">format: b64salt:b64nonce:b64ct</span><span class="se">\n</span><span class="s">state: NO ACCESS&quot;</span><span class="p">])</span>
+    Q(["return SecureBuffer output\nformat: b64salt:b64nonce:b64ct\nstate: NO ACCESS"])
 
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">E</span><span class="w"> </span><span class="nl">fill:</span><span class="p">#</span><span class="n">D3D1C7</span><span class="p">,</span><span class="nl">stroke:</span><span class="p">#</span><span class="mf">5F5E5</span><span class="n">A</span><span class="p">,</span><span class="nl">color:</span><span class="p">#</span><span class="mh">2</span><span class="n">C2C2A</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="nl">fill:</span><span class="p">#</span><span class="n">FAC775</span><span class="p">,</span><span class="nl">stroke:</span><span class="p">#</span><span class="mf">854F</span><span class="mh">0</span><span class="n">B</span><span class="p">,</span><span class="nl">color:</span><span class="p">#</span><span class="mh">412402</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">G</span><span class="w"> </span><span class="nl">fill:</span><span class="p">#</span><span class="n">B5D4F4</span><span class="p">,</span><span class="nl">stroke:</span><span class="p">#</span><span class="mf">185F</span><span class="n">A5</span><span class="p">,</span><span class="nl">color:</span><span class="p">#</span><span class="mh">042</span><span class="n">C53</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="nl">fill:</span><span class="p">#</span><span class="n">FAC775</span><span class="p">,</span><span class="nl">stroke:</span><span class="p">#</span><span class="mf">854F</span><span class="mh">0</span><span class="n">B</span><span class="p">,</span><span class="nl">color:</span><span class="p">#</span><span class="mh">412402</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="nl">fill:</span><span class="p">#</span><span class="n">D3D1C7</span><span class="p">,</span><span class="nl">stroke:</span><span class="p">#</span><span class="mf">5F5E5</span><span class="n">A</span><span class="p">,</span><span class="nl">color:</span><span class="p">#</span><span class="mh">2</span><span class="n">C2C2A</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="nl">fill:</span><span class="p">#</span><span class="n">D3D1C7</span><span class="p">,</span><span class="nl">stroke:</span><span class="p">#</span><span class="mf">5F5E5</span><span class="n">A</span><span class="p">,</span><span class="nl">color:</span><span class="p">#</span><span class="mh">2</span><span class="n">C2C2A</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">O</span><span class="w"> </span><span class="nl">fill:</span><span class="p">#</span><span class="n">D3D1C7</span><span class="p">,</span><span class="nl">stroke:</span><span class="p">#</span><span class="mf">5F5E5</span><span class="n">A</span><span class="p">,</span><span class="nl">color:</span><span class="p">#</span><span class="mh">2</span><span class="n">C2C2A</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="nl">fill:</span><span class="p">#</span><span class="n">F5C4B3</span><span class="p">,</span><span class="nl">stroke:</span><span class="p">#</span><span class="mh">993</span><span class="n">C1D</span><span class="p">,</span><span class="nl">color:</span><span class="p">#</span><span class="mh">4</span><span class="n">A1B0C</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="nl">fill:</span><span class="p">#</span><span class="n">F5C4B3</span><span class="p">,</span><span class="nl">stroke:</span><span class="p">#</span><span class="mh">993</span><span class="n">C1D</span><span class="p">,</span><span class="nl">color:</span><span class="p">#</span><span class="mh">4</span><span class="n">A1B0C</span>
-<span class="w">    </span><span class="n">style</span><span class="w"> </span><span class="n">J</span><span class="w"> </span><span class="nl">fill:</span><span class="p">#</span><span class="n">F7C1C1</span><span class="p">,</span><span class="nl">stroke:</span><span class="p">#</span><span class="n">A32D2D</span><span class="p">,</span><span class="nl">color:</span><span class="p">#</span><span class="mh">501313</span>
-</code></pre></div>
-
+    style E fill:#D3D1C7,stroke:#5F5E5A,color:#2C2C2A
+    style F fill:#FAC775,stroke:#854F0B,color:#412402
+    style G fill:#B5D4F4,stroke:#185FA5,color:#042C53
+    style H fill:#FAC775,stroke:#854F0B,color:#412402
+    style M fill:#D3D1C7,stroke:#5F5E5A,color:#2C2C2A
+    style N fill:#D3D1C7,stroke:#5F5E5A,color:#2C2C2A
+    style O fill:#D3D1C7,stroke:#5F5E5A,color:#2C2C2A
+    style P fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C
+    style Q fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C
+    style J fill:#F7C1C1,stroke:#A32D2D,color:#501313</code></pre>
 <p><strong>Buffer / memory state summary</strong></p>
 <table>
 <thead>
@@ -1128,12 +1112,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="-">---<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<hr />
 <h2 id="how-to-build-and-run">How to Build and Run<a class="headerlink" href="#how-to-build-and-run" title="Permanent link">&para;</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
 <li>A C++ compiler with C++17 support (e.g., <code>g++</code>)</li>
-<li><code>libsodium</code> installed on your system</li>
+<li>install <code>libsodium</code> if not already installed</li>
 <li>install <code>pkg-config</code> if not already installed</li>
 </ul>
 <hr />
@@ -1141,7 +1125,7 @@
 <p>pkg-config --modversion libsodium</p>
 <h3 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h3>
 <p>Navigate to the <code>src</code> directory and compile the program:</p>
-<div class="codehilite"><pre><span></span><code>g++<span class="w"> </span>-std<span class="o">=</span>c++17<span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-pedantic<span class="w"> </span>-O2<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>g++<span class="w"> </span>-std<span class="o">=</span>c++17<span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-pedantic<span class="w"> </span>-O2<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-fstack-protector-strong<span class="w"> </span>-D_FORTIFY_SOURCE<span class="o">=</span><span class="m">2</span><span class="w"> </span>-fPIE<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>main.cpp<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>helper/encrypt_decrypt.cpp<span class="w"> </span><span class="se">\</span>
@@ -1152,22 +1136,22 @@
 <span class="w">  </span>-pie<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-o<span class="w"> </span>main
 </code></pre></div>
-
 <ul>
-<li>Wextra: Enables additional compiler warnings beyond -Wall</li>
-<li>pedantic: Forces strict compliance with the C++ standard</li>
-<li>fstack-protector-strong: Detects stack buffer overflows at runtime</li>
-<li>fPIE: Makes your executable position-independent, Program gets loaded at random memory addresses each run</li>
+<li>Wextra: Enables additional compiler warnings beyond -Wall.</li>
+<li>pedantic: Forces strict compliance with the C++ standard.</li>
+<li>fstack-protector-strong: Detects stack buffer overflows at runtime.</li>
+<li>fPIE: Makes your executable position-independent, Program gets loaded at random memory addresses each run.</li>
 </ul>
 <h3 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h3>
-<p>./main</p>
+<div class="highlight"><pre><span></span><code>./main
+</code></pre></div>
 <hr />
-<h3 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h3>
+<h2 id="future-improvements">Future improvements<a class="headerlink" href="#future-improvements" title="Permanent link">&para;</a></h2>
 <ul>
-<li>get_message_secure terminal echo/prints - fix based on user needs</li>
-<li>SecureAccessGuard - bad for multithreaded</li>
-<li>sodium_stackzero(2048) unreliable</li>
-<li>Payload parsing - exception handling</li>
+<li><em>get_message_secure</em> prints to terminal - this can be handled differently based on user needs.</li>
+<li><em>SecureAccessGuard</em> - is bad for multithreaded use cases.</li>
+<li><em>sodium_stackzero(2048)</em> - is only best-effort and can be platform-fragile.</li>
+<li><em>Payload parsing</em> - exception handling can be improved.</li>
 </ul>
 
 
@@ -1222,6 +1206,8 @@
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>
