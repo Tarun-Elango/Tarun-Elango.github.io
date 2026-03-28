@@ -868,6 +868,7 @@
 <li>mlock'd — pages are pinned in RAM, preventing swap to disk.</li>
 <li>mprotect'd — memory is set to no-access by default; unlocked read-only only for the duration of each cryptographic call, then re-locked immediately after.</li>
 <li>zeroed on release — sodium_free guarantees a secure wipe before the region is returned to the OS.</li>
+<li>guard-pages — sodium_malloc places inaccessible pages on either side of the buffer; any out of bounds access crashes the program immediately.</li>
 </ul>
 <p><strong>Note</strong>: this reduces key exposure risk by keeping private content in secure buffer while also making sure the memory region is manually wiped after use, but does not provide formal memory-safety guarantees for all C++ code paths. Created for learning purposes.</p>
 <hr />
@@ -878,7 +879,7 @@
 <p><strong><em>SecureBuffer</em></strong>: A memory container for sensitive data. Instead of using regular memory, we use libsodium's <code>sodium_malloc</code>to manage the memory. This ensures that the memory is locked so the OS won't swap it to disk, and it's surrounded by guard pages that crash the program if you accidentally try to read/write past the buffer. Furthermore, we use <code>sodium_memzero</code> to zero the memory so secrets don't linger in RAM.</p>
 </li>
 <li>
-<p><strong><em>SecureAccessGuard</em></strong>: A RAII wrapper for <code>SecureBuffer</code>. Say for example: we manually call unlock_read() and then an exception fires before you call lock_access(), the buffer stays permanently readable. <code>SecureAccessGuard</code> ensures that on creattion the buffer is open for reading, and on destruction (when guard goes out of scope, including exceptions) it is locked. </p>
+<p><strong><em>SecureAccessGuard</em></strong>: A RAII wrapper for <code>SecureBuffer</code>. Say for example: we manually call unlock_read() and then an exception fires before you call lock_access(), the buffer stays permanently readable. <code>SecureAccessGuard</code> ensures that on creation the buffer is open for reading, and on destruction (when guard goes out of scope, including exceptions) it is locked. </p>
 </li>
 </ul>
 <h3 id="there-are-four-phases-to-the-encryption-process">There are four phases to the encryption process:<a class="headerlink" href="#there-are-four-phases-to-the-encryption-process" title="Permanent link">&para;</a></h3>
@@ -890,6 +891,7 @@
 </ul>
 <p><em>Wont be explaining the decryption process here, but it is very similar.</em></p>
 <h4 id="phase-1-get-input-message">Phase 1 — Get Input Message<a class="headerlink" href="#phase-1-get-input-message" title="Permanent link">&para;</a></h4>
+<p>Characters are read one at a time directly into a sodium_malloc'd SecureBuffer — no intermediate std::string or heap copy is ever produced. Terminal echo and canonical buffering are disabled via ScopedTermios for the duration of input, then restored on scope exit. Once reading is complete, set_size() updates the byte count of the secure buffer, and lock_access() sets the region to no-access via mprotect before the buffer leaves the function.</p>
 <pre class="mermaid"><code>flowchart TD
     A([do_encrypt called]) --&gt; B[get_message_secure prompt]
 
@@ -946,6 +948,7 @@
 </table>
 <hr />
 <h4 id="phase-2-get-passphrase">Phase 2 — Get Passphrase<a class="headerlink" href="#phase-2-get-passphrase" title="Permanent link">&para;</a></h4>
+<p>Same character-by-character approach as phase 1, but input echo is additionally suppressed so the passphrase never appears on screen. Two independent SecureBuffers are filled and compared with sodium_memcmp — a constant-time comparison that avoids early-exit timing leaks. On mismatch both buffers are destroyed and sodium_free zeroes their regions before retry. On match the confirmation copy is immediately destroyed; the surviving buffer is locked to no-access before being returned.</p>
 <pre class="mermaid"><code>flowchart TD
     A([get_passphrase_with_confirmation called]) --&gt; B
 
@@ -1008,6 +1011,7 @@
 </table>
 <hr />
 <h4 id="phase-3-key-derivation">Phase 3 — Key Derivation<a class="headerlink" href="#phase-3-key-derivation" title="Permanent link">&para;</a></h4>
+<p>The passphrase buffer is unlocked read-only exclusively for the duration of the crypto_pwhash (key derivation) call via SecureAccessGuard — which re-locks to no-access on scope exit even if an exception fires. Argon2id (Key derivation function) runs at OPSLIMIT_SENSITIVE and MEMLIMIT_SENSITIVE, making brute-force attacks computationally expensive. The derived key is written directly into a sodium_malloc'd SecureBuffer and locked to no-access immediately after crypto_pwhash returns. sodium_stackzero(2048) follows as a best-effort wipe of the KDF's stack frame.</p>
 <pre class="mermaid"><code>flowchart TD
     A(["passphrase SecureBuffer\nstate: NO ACCESS"]) --&gt; C
     B(["salt\[32\] stack array\nrandombytes_buf"]) --&gt; D
@@ -1072,6 +1076,7 @@
 </table>
 <hr />
 <h4 id="phase-4-encrypt_message">Phase 4 — encrypt_message<a class="headerlink" href="#phase-4-encrypt_message" title="Permanent link">&para;</a></h4>
+<p>Plaintext and key are each unlocked read-only via their own SecureAccessGuard scopes — both re-lock the moment the AEAD call returns, regardless of outcome. A stack-allocated <code>EncryptStackWiper</code> guarantees that the salt and nonce arrays are zeroed on scope exit even through exceptions. After encryption, the intermediate ciphertext_buf vector and all three base64 std::string heap allocations are explicitly wiped with sodium_memzero before the output SecureBuffer is locked to no-access and returned.</p>
 <pre class="mermaid"><code>flowchart TD
     A(["plaintext SecureBuffer\nstate: NO ACCESS"]) --&gt; E
     B(["passphrase SecureBuffer\nstate: NO ACCESS"]) --&gt; C
@@ -1186,7 +1191,6 @@
 <li>install <code>libsodium</code> if not already installed</li>
 <li>install <code>pkg-config</code> if not already installed</li>
 </ul>
-<hr />
 <h3 id="verify-libsodium">Verify libsodium<a class="headerlink" href="#verify-libsodium" title="Permanent link">&para;</a></h3>
 <p>pkg-config --modversion libsodium</p>
 <h3 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h3>
