@@ -447,17 +447,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contents
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#purpose" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -663,17 +652,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contents
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#purpose" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -846,17 +824,7 @@
 
 
 <h1 id="end-to-end-encrypted-chat-client-side-encryption-dumb-relay-no-external-services-feat-railway">End-to-End Encrypted Chat — Client-Side Encryption, Dumb Relay, No External Services (feat. Railway)<a class="headerlink" href="#end-to-end-encrypted-chat-client-side-encryption-dumb-relay-no-external-services-feat-railway" title="Permanent link">&para;</a></h1>
-<h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="#purpose">Purpose</a></li>
-<li><a href="#scenario-where-this-is-useful">Scenario where this is useful</a></li>
-<li><a href="#how-it-works">How it works</a></li>
-<li><a href="#setup--usage-guide">Setup &amp; Usage Guide</a></li>
-<li><a href="#deploying-with-railway-httpsrailwaycom">Deploying with Railway (https://railway.com)</a></li>
-<li><a href="#things-to-look-out-for-when-using">Things to look out for when using.</a></li>
-<li><a href="#future-improvements">Future improvements</a></li>
-<li>Github repo: <a href="https://github.com/Tarun-Elango/secure-relay-chat">https://github.com/Tarun-Elango/secure-relay-chat</a></li>
-</ul>
+<p><em>last updated: April 4, 2026</em></p>
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
 <p>A minimal, end-to-end encrypted group chat using a dumb relay server. Clients send encrypted messages to the relay, which forwards them to intended recipients without ever seeing plaintext or private keys. This repository includes:</p>
 <ul>
@@ -969,22 +937,22 @@
 <p><strong>Steps to deploy the relay server:</strong></p>
 <ol>
 <li>
-<p>Create a new project on Railway and connect your GitHub repository.</p>
+<p>Create a new project on Railway and connect your GitHub repository. Once you select the repository, this will take you to deployment settings.</p>
 <p><img alt="Alt text" src="../images/1.png" /></p>
 </li>
 <li>
-<p>Source section: change source to /java-relay-server</p>
+<p>Source section in deployment settings: change source to /java-relay-server</p>
 <p><img alt="Alt text" src="../images/2.png" /></p>
 </li>
 <li>
-<p>Networking section: enable public networking by clicking generate domain.</p>
+<p>Networking section in deployment settings: enable public networking by clicking generate domain.</p>
 </li>
 <li>
-<p>Build section: set the build command to <code>mvn clean package</code></p>
+<p>Build section in deployment settings: set the build command to <code>mvn clean package</code></p>
 <p><img alt="Alt text" src="../images/3.png" /></p>
 </li>
 <li>
-<p>Deploy section: set the start command to <code>java -jar target/relay-server-1.0.0.jar</code></p>
+<p>Deploy section in deployment settings: set the start command to <code>java -jar target/relay-server-1.0.0.jar</code></p>
 <p><img alt="Alt text" src="../images/4.png" /></p>
 </li>
 <li>
@@ -992,7 +960,7 @@
 </li>
 <li>
 <p>After deployment, view logs (from deployment tab) to find the invite token printed by the server. Share this token with participants.</p>
-<p>In the settings you will get the public domain for your server, which will be used as the WebSocket URL in the client UI (e.g. <code>wss://your-project.up.railway.app</code>).</p>
+<p>In the settings (networking) you will get the public domain for your server, which will be used as the WebSocket URL in the client UI (e.g. <code>your-project.up.railway.app</code>, when using this url, make sure to add the <code>wss://</code> prefix, which becomes <code>wss://your-project.up.railway.app</code>).</p>
 </li>
 </ol>
 <p><strong>Opening the UI</strong>: Follow the steps in the <code>For Participants (Connecting as a Client)</code> section above to serve the client UI locally, and open <code>http://localhost:3000</code> in your browser.
