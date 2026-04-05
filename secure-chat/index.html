@@ -16,6 +16,8 @@
         <link rel="prev" href="../symmetric-encryption/">
       
       
+        <link rel="next" href="../load-balancer-on-railway/">
+      
       
         
       
@@ -25,7 +27,7 @@
     
     
       
-        <title>End-to-End Encrypted Chat — Client-Side Encryption, Dumb Relay, No External Services - Tarun's Research Corner</title>
+        <title>End-to-End Encrypted Chat — Client-Side Encryption, Stateless Relay, No External Dependencies - Tarun's Research Corner</title>
       
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#end-to-end-encrypted-chat-client-side-encryption-dumb-relay-no-external-services-feat-railway" class="md-skip">
+        <a href="#end-to-end-encrypted-chat-client-side-encryption-stateless-relay-no-external-dependencies" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              End-to-End Encrypted Chat — Client-Side Encryption, Dumb Relay, No External Services
+              End-to-End Encrypted Chat — Client-Side Encryption, Stateless Relay, No External Dependencies
             
           </span>
         </div>
@@ -403,7 +405,7 @@
   <span class="md-ellipsis">
     
   
-    End-to-End Encrypted Chat — Client-Side Encryption, Dumb Relay, No External Services
+    End-to-End Encrypted Chat — Client-Side Encryption, Stateless Relay, No External Dependencies
   
 
     
@@ -421,7 +423,7 @@
   <span class="md-ellipsis">
     
   
-    End-to-End Encrypted Chat — Client-Side Encryption, Dumb Relay, No External Services
+    End-to-End Encrypted Chat — Client-Side Encryption, Stateless Relay, No External Dependencies
   
 
     
@@ -605,6 +607,89 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../load-balancer-on-railway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to set up a load balancer with Nginx on Railway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -823,15 +908,17 @@
 
 
 
-<h1 id="end-to-end-encrypted-chat-client-side-encryption-dumb-relay-no-external-services-feat-railway">End-to-End Encrypted Chat — Client-Side Encryption, Dumb Relay, No External Services (feat. Railway)<a class="headerlink" href="#end-to-end-encrypted-chat-client-side-encryption-dumb-relay-no-external-services-feat-railway" title="Permanent link">&para;</a></h1>
+<h1 id="end-to-end-encrypted-chat-client-side-encryption-stateless-relay-no-external-dependencies">End-to-End Encrypted Chat — Client-Side Encryption, Stateless Relay, No External Dependencies<a class="headerlink" href="#end-to-end-encrypted-chat-client-side-encryption-stateless-relay-no-external-dependencies" title="Permanent link">&para;</a></h1>
 <p><em>last updated: April 4, 2026</em></p>
+<p><strong><a href="https://github.com/Tarun-Elango/secure-relay-chat">GitHub Repository</a></strong></p>
+<p><strong><a href="#deploying-with-railway-httpsrailwaycom">Steps to Self-host the Relay Server on Railway</a></strong></p>
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
 <p>A minimal, end-to-end encrypted group chat using a dumb relay server. Clients send encrypted messages to the relay, which forwards them to intended recipients without ever seeing plaintext or private keys. This repository includes:</p>
 <ul>
 <li>A Relay server implemented in Java using <code>WebSocketServer</code> (hosted by one member of the group).</li>
 <li>A simple client UI in HTML/JS that connects to the relay (can be hosted or run locally).</li>
 </ul>
-<p>The goal is to demonstrate a simple group chat where clients handle all encryption locally and do not rely on external services. This ensures all the chat data remains private between participants.</p>
+<p><strong>The goal</strong> is to demonstrate a simple group chat where clients handle all encryption locally and do not rely on external services, providers or dependencies like signal, whatsapp, or telegram. This ensures all the chat data remains private between participants.</p>
 <hr />
 <h2 id="scenario-where-this-is-useful">Scenario where this is useful<a class="headerlink" href="#scenario-where-this-is-useful" title="Permanent link">&para;</a></h2>
 <p>You want to have a private group chat with friends, family, or colleagues without relying on third-party platforms.</p>

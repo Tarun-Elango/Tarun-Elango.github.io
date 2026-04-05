@@ -13,6 +13,8 @@
       
       
       
+        <link rel="prev" href="../secure-chat/">
+      
       
       
         
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-set-up-a-load-balancer-with-nginx-on-railway" class="md-skip">
+        <a href="#load-balancing-with-nginx-on-railway" class="md-skip">
           Skip to content
         </a>
       
@@ -256,18 +258,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -288,7 +292,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -388,7 +392,7 @@
   <span class="md-ellipsis">
     
   
-    End-to-End Encrypted Chat — Client-Side Encryption, Dumb Relay, No External Services
+    End-to-End Encrypted Chat — Client-Side Encryption, Stateless Relay, No External Dependencies
   
 
     
@@ -397,6 +401,288 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to set up a load balancer with Nginx on Railway
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to set up a load balancer with Nginx on Railway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-the-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview of the Instances
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-deploy-two-backend-server-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Deploy Two Backend Server Instances
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1 — Deploy Two Backend Server Instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-first-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the first server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-second-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the second server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-the-nginx-load-balancer-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Create the Nginx Load Balancer Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-test-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Test It
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Things to Note
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Things to Note">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-nginx-public-url-must-be-exposed-on-port-80" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Nginx public URL must be exposed on port 80
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-apps-must-listen-on-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend apps must listen on IPv6 (::)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -454,6 +740,145 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-the-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview of the Instances
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-deploy-two-backend-server-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Deploy Two Backend Server Instances
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1 — Deploy Two Backend Server Instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-first-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the first server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-second-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the second server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-the-nginx-load-balancer-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Create the Nginx Load Balancer Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-test-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Test It
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Things to Note
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Things to Note">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-nginx-public-url-must-be-exposed-on-port-80" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Nginx public URL must be exposed on port 80
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-apps-must-listen-on-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend apps must listen on IPv6 (::)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -471,10 +896,157 @@
 
 
 
-<h1 id="how-to-set-up-a-load-balancer-with-nginx-on-railway">How to set up a load balancer with Nginx on Railway<a class="headerlink" href="#how-to-set-up-a-load-balancer-with-nginx-on-railway" title="Permanent link">&para;</a></h1>
+<h1 id="load-balancing-with-nginx-on-railway">Load Balancing with Nginx on Railway<a class="headerlink" href="#load-balancing-with-nginx-on-railway" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>This is a short article on how to set up a load balancer with Nginx on Railway  <a href="https://railway.com">Railway</a>. When horizontal scaling is needed, default method on railway involves increasing the instance count of the service, and railway handles the load balancing. However, in some cases, you may want to have more control over the load balancing process. </p>
-<p>To showcase this, we will spin up two instances of a simple server, and then set up another instance - which will run a nginx configuration to load balance between the two server instances.</p>
+<p>When horizontal scaling is needed, <a href="https://railway.com" target="_blank" rel="noopener noreferrer">Railway's</a> default approach is to increase the instance count of a service — Railway then handles load balancing <a href="https://docs.railway.com/deployments/scaling#load-balancing-between-replicas" target="_blank" rel="noopener noreferrer">automatically</a>. However, in some cases you may want more control over the load balancing process (e.g. for sticky sessions, custom routing logic, caching, specific load balancing rules, etc.)</p>
+<p>This guide walks through setting up a custom Nginx load balancer on Railway. We'll spin up <strong>two instances of a simple server</strong> and a <strong>third instance running Nginx</strong>, configured to distribute traffic between them.</p>
+<h2 id="_1"><img alt="Alt text" src="../images/loadbalancer/1.png" /><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="overview-of-the-instances">Overview of the Instances<a class="headerlink" href="#overview-of-the-instances" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Instance</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>function-bun server 1</code></td>
+<td>Backend server #1 (public network disabled)</td>
+</tr>
+<tr>
+<td><code>function-bun server 2</code></td>
+<td>Backend server #2 (public network disabled)</td>
+</tr>
+<tr>
+<td>Nginx service</td>
+<td>Load balancer (public-facing)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-deploy-two-backend-server-instances">Step 1 — Deploy Two Backend Server Instances<a class="headerlink" href="#step-1-deploy-two-backend-server-instances" title="Permanent link">&para;</a></h3>
+<p>Create two separate Railway services running a simple HTTP server. The example below uses <strong>Bun with Hono</strong>, but any runtime works. </p>
+<h4 id="create-the-first-server">Create the first server<a class="headerlink" href="#create-the-first-server" title="Permanent link">&para;</a></h4>
+<p>From the Railway dashboard, click on add a new service (for this example we will chose Function) and deploy it using the code below. For a function, we dont need to change any build or start commands — just deploy the code as is. choose the instance specs as needed.</p>
+<p>Disable "Enable serverless" in the settings, under deploy, to ensure your service is always running and can receive traffic from Nginx without cold starts.</p>
+<details class="note">
+<summary>Backend server code — <code>index.tsx</code> (Bun v1.3)</summary>
+<div class="highlight"><pre><span></span><code><span class="c1">// index.tsx (Bun v1.3 runtime)</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Hono</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;hono@4&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cors</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;hono/cors&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Hono</span><span class="p">();</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;/*&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">cors</span><span class="p">());</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Hello world! 1&quot;</span><span class="p">));</span><span class="w">  </span><span class="c1">// Change to &quot;Hello world! 2&quot; for the second instance</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/api/health&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">c</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ok&quot;</span><span class="w"> </span><span class="p">}));</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">8080</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Server starting on port:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">port</span><span class="p">);</span>
+
+<span class="nx">Bun</span><span class="p">.</span><span class="nx">serve</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">port</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">hostname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;::&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Listen on IPv6 — required for Railway&#39;s internal network, Check your runtime&#39;s docs for how to do this</span>
+<span class="w">  </span><span class="nx">fetch</span><span class="o">:</span><span class="w"> </span><span class="kt">app.fetch</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div>
+</details>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The server <strong>must</strong> listen on <code>::</code> (IPv6). Railway's internal network is IPv6-based, and services are not exposed on the public network — so if your app only listens on IPv4, the Nginx proxy will not be able to reach it. In Java this is handled automatically; in most other runtimes you need to set this explicitly.</p>
+</div>
+<p>Once deployed, <strong>disable the public network</strong> for this service — you'll find this option in the <strong>Settings</strong> tab under <strong>Network</strong>. These backend instances should only be accessible internally via Nginx, not over the public internet.</p>
+<p><img alt="Alt text" src="../images/loadbalancer/2.png" />  <!-- showing network settings --></p>
+<h4 id="create-the-second-server">Create the second server<a class="headerlink" href="#create-the-second-server" title="Permanent link">&para;</a></h4>
+<p>Right-click your first service in the Railway dashboard and select <strong>Duplicate</strong>. In the duplicated service, change <code>"Hello world! 1"</code> to <code>"Hello world! 2"</code> — this lets you verify that traffic is actually being split between the two instances when you test later.</p>
+<p><img alt="Alt text" src="../images/loadbalancer/3.png" />  <!-- showing duplicated service step --></p>
+<p>Disable the public network on the second service as well.
+You should now have two backend services running, each returning a distinct response, with no public network exposure. <em>Keep note of the private internal hostnames (settings -&gt; networking), this
+will be required in the next step.</em>
+<img alt="Alt text" src="../images/loadbalancer/4.png" />  <!-- showing two instances --></p>
+<hr />
+<h3 id="step-2-create-the-nginx-load-balancer-service">Step 2 — Create the Nginx Load Balancer Service<a class="headerlink" href="#step-2-create-the-nginx-load-balancer-service" title="Permanent link">&para;</a></h3>
+<p>Create a third Railway service by clicking on add a new service, select 'Github Repository' and select your repository. When connecting the github repo and directory, make sure the source root directory contains both the <code>Dockerfile</code> and <code>nginx.conf</code> files (code provided below).</p>
+<p><img alt="Alt text" src="../images/loadbalancer/7.png" />  <!-- showing github repo connection step --></p>
+<p>Update the internal hostname in <code>nginx.conf</code> if your backend services have different names. The hostname should be in the format <code>&lt;service-name&gt;.railway.internal</code> (e.g. <code>function-bun.railway.internal</code>).</p>
+<details class="note">
+<summary>Nginx configuration — <code>nginx.conf</code></summary>
+<div class="highlight"><pre><span></span><code><span class="k">events</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kn">worker_connections</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">http</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1"># Railway&#39;s internal DNS is IPv6-based — point resolver at fd12::10</span>
+<span class="w">  </span><span class="kn">resolver</span><span class="w"> </span><span class="s">[fd12::10]</span><span class="w"> </span><span class="s">valid=10s</span><span class="w"> </span><span class="s">ipv6=on</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1"># Split traffic 50/50 across both backends using the client IP + URI as the key</span>
+<span class="w">  </span><span class="kn">split_clients</span><span class="w"> </span><span class="s">&quot;</span><span class="nv">${remote_addr}${request_uri}&quot;</span><span class="w"> </span><span class="nv">$backend</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">50%</span><span class="w">  </span><span class="s">&quot;function-bun.railway.internal&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1"># &lt;-- Update with your backend service&#39;s internal hostname</span>
+<span class="w">    </span><span class="kn">50%</span><span class="w">  </span><span class="s">&quot;function-bun-copy.railway.internal&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1"># &lt;-- Update with your backend service&#39;s internal hostname</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kn">server</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">80</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="s">[::]:80</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1"># Local health check endpoint for the Nginx service itself</span>
+<span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/health-local</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kn">return</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="s">&quot;nginx</span><span class="w"> </span><span class="s">ok&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="kn">add_header</span><span class="w"> </span><span class="s">Content-Type</span><span class="w"> </span><span class="s">text/plain</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://</span><span class="nv">$backend:8080</span><span class="p">;</span>
+<span class="w">      </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
+<span class="w">      </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Real-IP</span><span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span>
+<span class="w">      </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+<span class="w">      </span><span class="kn">proxy_connect_timeout</span><span class="w"> </span><span class="s">5s</span><span class="p">;</span>
+<span class="w">      </span><span class="kn">proxy_read_timeout</span><span class="w"> </span><span class="s">30s</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>Dockerfile</summary>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">nginx:alpine</span>
+<span class="k">COPY</span><span class="w"> </span>nginx.conf<span class="w"> </span>/etc/nginx/nginx.conf
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;nginx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-g&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;daemon off;&quot;</span><span class="p">]</span>
+</code></pre></div>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Why <code>split_clients</code> instead of <code>upstream</code>?</p>
+<p>On Railway, service IPs change on <a href="https://station.railway.com/questions/nginx-with-private-networking-upstream-8d7ce3c3?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">redeploy</a>, so static resolution is unreliable.
+With <code>upstream</code>, Nginx resolves hostnames only at startup, so it keeps using stale IPs and returns 502s until restarted.
+Using <code>split_clients</code> with a variable in <code>proxy_pass</code> enables dynamic routing per request.
+With a <code>resolver</code>, Nginx re-resolves DNS each time, so new backend IPs are picked up instantly.</p>
+</div>
+<p>In network settings for the Nginx service, update the port to <code>80</code> and ensure the public network is enabled.</p>
+<p><img alt="Alt text" src="../images/loadbalancer/5.png" /> <!-- showing network settings --></p>
+<p>Deploy the Nginx service after making these changes.
+when you hit the public URL of the Nginx service, it will route requests to both backend instances in a 50/50 split based on the client IP + URI.</p>
+<hr />
+<h3 id="step-3-test-it">Step 3 — Test It<a class="headerlink" href="#step-3-test-it" title="Permanent link">&para;</a></h3>
+<p>Hit the public URL of your Nginx instance in a browser. You should see <code>Hello world!</code> returned. Refreshing multiple times should route requests across both backend instances.</p>
+<p><img alt="Alt text" src="../images/loadbalancer/6.png" />  <!-- showing hello world response on browser --></p>
+<p>You can also verify the Nginx service itself is healthy at:</p>
+<div class="highlight"><pre><span></span><code>https://&lt;your-nginx-public-url&gt;/health-local
+</code></pre></div>
+<p><strong>Furthermore</strong>, you can make changes to Nginx's configuration (e.g. adjust load balancing weights, add caching, add sticky sessions, etc.) and redeploy the Nginx service to apply them.</p>
+<hr />
+<h2 id="things-to-note">Things to Note<a class="headerlink" href="#things-to-note" title="Permanent link">&para;</a></h2>
+<h3 id="the-nginx-public-url-must-be-exposed-on-port-80">The Nginx public URL must be exposed on port 80<a class="headerlink" href="#the-nginx-public-url-must-be-exposed-on-port-80" title="Permanent link">&para;</a></h3>
+<p>Railway maps your service's public URL to the port you specify. Nginx is configured to <code>listen 80</code>, so the public URL <strong>must be set to port 80</strong> in the Railway dashboard — otherwise incoming traffic won't reach Nginx.</p>
+<h3 id="backend-apps-must-listen-on-ipv6">Backend apps must listen on IPv6 (<code>::</code>)<a class="headerlink" href="#backend-apps-must-listen-on-ipv6" title="Permanent link">&para;</a></h3>
+<p>Railway's internal network (used for service-to-service communication) is <strong>IPv6-only</strong>. Services are not reachable via their internal hostnames over IPv4. Your backend app must explicitly bind to <code>::</code> to accept connections on the internal network.</p>
+<ul>
+<li><strong>Bun / Node.js</strong>: Set <code>hostname: "::"</code> in your server config (these runtimes default to IPv4 only)</li>
+<li><strong>Java</strong>: Listens on both IPv4 and IPv6 by default — no change needed</li>
+<li><strong>Other runtimes</strong>: Check your framework's docs for how to bind to <code>0.0.0.0</code> / <code>::</code> or both</li>
+</ul>
 
 
 
