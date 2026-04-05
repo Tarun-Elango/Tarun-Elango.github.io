@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#load-balancing-with-nginx-on-railway" class="md-skip">
+        <a href="#how-to-set-up-a-load-balancer-with-nginx-on-railway" class="md-skip">
           Skip to content
         </a>
       
@@ -896,7 +896,7 @@
 
 
 
-<h1 id="load-balancing-with-nginx-on-railway">Load Balancing with Nginx on Railway<a class="headerlink" href="#load-balancing-with-nginx-on-railway" title="Permanent link">&para;</a></h1>
+<h1 id="how-to-set-up-a-load-balancer-with-nginx-on-railway">How to Set Up a Load Balancer with Nginx on Railway<a class="headerlink" href="#how-to-set-up-a-load-balancer-with-nginx-on-railway" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>When horizontal scaling is needed, <a href="https://railway.com" target="_blank" rel="noopener noreferrer">Railway's</a> default approach is to increase the instance count of a service — Railway then handles load balancing <a href="https://docs.railway.com/deployments/scaling#load-balancing-between-replicas" target="_blank" rel="noopener noreferrer">automatically</a>. However, in some cases you may want more control over the load balancing process (e.g. for sticky sessions, custom routing logic, caching, specific load balancing rules, etc.)</p>
 <p>This guide walks through setting up a custom Nginx load balancer on Railway. We'll spin up <strong>two instances of a simple server</strong> and a <strong>third instance running Nginx</strong>, configured to distribute traffic between them.</p>
