@@ -13,10 +13,8 @@
       
       
       
-        <link rel="prev" href="../symmetric-encryption/">
+        <link rel="prev" href="../load-balancer-on-railway/">
       
-      
-        <link rel="next" href="../load-balancer-on-railway/">
       
       
         
@@ -27,7 +25,7 @@
     
     
       
-        <title>End-to-End Encrypted Chat — Client-Side Encryption, Stateless Relay, No External Dependencies - Tarun's Research Corner</title>
+        <title>private VPN on AWS EC2 - Tarun's Research Corner</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#end-to-end-encrypted-chat-client-side-encryption-stateless-relay-no-external-dependencies" class="md-skip">
+        <a href="#setup-your-private-vpn-on-aws-ec2-with-wireguard" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              End-to-End Encrypted Chat — Client-Side Encryption, Stateless Relay, No External Dependencies
+              private VPN on AWS EC2
             
           </span>
         </div>
@@ -309,20 +307,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -343,7 +339,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -386,37 +382,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    End-to-End Encrypted Chat — Client-Side Encryption, Stateless Relay, No External Dependencies
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../secure-chat/" class="md-nav__link">
         
   
   
@@ -432,181 +401,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Purpose
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scenario-where-this-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scenario where this is useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How it works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How it works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#joining-the-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Joining the session
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sending-a-message" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sending a message
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disconnecting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Disconnecting
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-usage-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup &amp; Usage Guide
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Setup &amp; Usage Guide">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-the-admin-running-the-relay-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        For the Admin (Running the Relay Server)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-participants-connecting-as-a-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        For Participants (Connecting as a Client)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploying-with-railway-httpsrailwaycom" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deploying with Railway (https://railway.com)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#things-to-look-out-for-when-using" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Things to look out for when using.
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future improvements
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -624,18 +418,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -656,7 +452,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -699,10 +495,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../private-vpn-aws/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    private VPN on AWS EC2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -718,6 +541,192 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a VPN?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-guide-is-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this guide is about
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-generate-client-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Generate Client Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-set-up-aws-ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Set Up AWS EC2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Set Up AWS EC2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-ec2-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create EC2 Instance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-key-pair-for-ssh-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Key Pair for SSH Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-security-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure Security Group
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-configure-vpn-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Configure VPN Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Configure VPN Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-setup-commands-in-your-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the Setup Commands in your Terminal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-script-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Script Does
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-configure-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Configure Client
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -765,10 +774,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
+  <a href="#what-is-a-vpn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Purpose
+        What is a VPN?
       
     </span>
   </a>
@@ -776,10 +785,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scenario-where-this-is-useful" class="md-nav__link">
+  <a href="#what-this-guide-is-about" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scenario where this is useful
+        What this guide is about
       
     </span>
   </a>
@@ -787,22 +796,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How it works
+        Requirements
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How it works">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-generate-client-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Generate Client Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-set-up-aws-ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Set Up AWS EC2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Set Up AWS EC2">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#joining-the-session" class="md-nav__link">
+  <a href="#create-ec2-instance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Joining the session
+        Create EC2 Instance
       
     </span>
   </a>
@@ -810,10 +841,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sending-a-message" class="md-nav__link">
+  <a href="#create-key-pair-for-ssh-access" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sending a message
+        Create Key Pair for SSH Access
       
     </span>
   </a>
@@ -821,10 +852,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#disconnecting" class="md-nav__link">
+  <a href="#configure-security-group" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disconnecting
+        Configure Security Group
       
     </span>
   </a>
@@ -837,22 +868,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-usage-guide" class="md-nav__link">
+  <a href="#step-3-configure-vpn-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup &amp; Usage Guide
+        Step 3: Configure VPN Server
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Setup &amp; Usage Guide">
+    <nav class="md-nav" aria-label="Step 3: Configure VPN Server">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-the-admin-running-the-relay-server" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For the Admin (Running the Relay Server)
+        Setup
       
     </span>
   </a>
@@ -860,10 +891,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#for-participants-connecting-as-a-client" class="md-nav__link">
+  <a href="#run-the-setup-commands-in-your-terminal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For Participants (Connecting as a Client)
+        Run the Setup Commands in your Terminal
       
     </span>
   </a>
@@ -871,10 +902,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
+  <a href="#what-the-script-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dependencies
+        What the Script Does
       
     </span>
   </a>
@@ -887,10 +918,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-with-railway-httpsrailwaycom" class="md-nav__link">
+  <a href="#step-4-configure-client" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deploying with Railway (https://railway.com)
+        Step 4: Configure Client
       
     </span>
   </a>
@@ -898,21 +929,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#things-to-look-out-for-when-using" class="md-nav__link">
+  <a href="#security-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Things to look out for when using.
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future improvements
+        Security Notes
       
     </span>
   </a>
@@ -936,174 +956,117 @@
 
 
 
-<h1 id="end-to-end-encrypted-chat-client-side-encryption-stateless-relay-no-external-dependencies">End-to-End Encrypted Chat — Client-Side Encryption, Stateless Relay, No External Dependencies<a class="headerlink" href="#end-to-end-encrypted-chat-client-side-encryption-stateless-relay-no-external-dependencies" title="Permanent link">&para;</a></h1>
-<p><strong><a href="https://github.com/Tarun-Elango/secure-relay-chat">GitHub Repository</a></strong></p>
-<p><strong><a href="#deploying-with-railway-httpsrailwaycom">Steps to Self-host the Relay Server on Railway</a></strong></p>
-<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<p>A minimal, end-to-end encrypted group chat using a dumb relay server. Clients send encrypted messages to the relay, which forwards them to intended recipients without ever seeing plaintext or private keys. This repository includes:</p>
+<h1 id="setup-your-private-vpn-on-aws-ec2-with-wireguard">Setup your private VPN on AWS EC2 with WireGuard<a class="headerlink" href="#setup-your-private-vpn-on-aws-ec2-with-wireguard" title="Permanent link">&para;</a></h1>
+<p>I decided to watch 'Akira' its been in my watchlist for a while, i found out its available on Mubi, but Mubi mexico and Mubi Brazil. I dont live in either of those countries. The obvious solution was to subscribe to a VPN. But then I thought, this is a perfect excuse to spin up a VPN server on AWS EC2. So here we are, enjoy! </p>
+<p>Edit: i really enjoyed the movie, highly recommend it.</p>
+<h2 id="what-is-a-vpn">What is a VPN?<a class="headerlink" href="#what-is-a-vpn" title="Permanent link">&para;</a></h2>
+<p>When you browse the internet normally, your traffic travels directly from your device to whatever website or service you're visiting — and along the way, your Internet Service Provider, network administrators, or anyone monitoring the network can see what you're doing and where you're connecting from.
+A VPN (Virtual Private Network) creates an encrypted tunnel between your device and a server. All your internet traffic gets routed through that server first, so to the outside world it looks like the traffic is coming from the server, not from you.</p>
+<h2 id="what-this-guide-is-about">What this guide is about<a class="headerlink" href="#what-this-guide-is-about" title="Permanent link">&para;</a></h2>
+<p>In this guide we're building our own personal VPN from scratch using:</p>
 <ul>
-<li>A Relay server implemented in Java using <code>WebSocketServer</code> (hosted by one member of the group).</li>
-<li>A simple client UI in HTML/JS that connects to the relay (can be hosted or run locally).</li>
+<li><strong>AWS EC2</strong> — a cloud server that you own and control (choose your preferred region)</li>
+<li><strong>WireGuard</strong> — an open source VPN protocol (https://www.wireguard.com)</li>
 </ul>
-<p><strong>The goal</strong> is to demonstrate a simple group chat where clients handle all encryption locally and do not rely on external services, providers or dependencies like signal, whatsapp, or telegram. This ensures all the chat data remains private between participants.</p>
-<hr />
-<h2 id="scenario-where-this-is-useful">Scenario where this is useful<a class="headerlink" href="#scenario-where-this-is-useful" title="Permanent link">&para;</a></h2>
-<p>You want to have a private group chat with friends, family, or colleagues without relying on third-party platforms.</p>
-<p>How it works:</p>
-<ol>
-<li>One person (the admin) runs the relay server and shares the invite token with the group.</li>
-<li>Each participant opens the client UI in their browser, enters the invite token and WebSocket URL, and connects to the relay.</li>
-</ol>
-<p>Now you have a private group chat open, where all messages are end-to-end encrypted on the client side. The relay simply forwards encrypted messages without ever having access to the plaintext or keys.</p>
-<hr />
-<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<p>The diagram below shows the full lifecycle of a session — from a client joining, to sending encrypted messages, to disconnecting.</p>
-<pre class="mermaid"><code>sequenceDiagram
-    participant Client as Your Browser
-    participant Relay as Relay Server
-    participant Peers as Other Participants
-
-    Note left of Client: 1. Generate a keypair locally (never sent to server)
-    Client-&gt;&gt;Relay: Join — send nickname, public key, invite token
-    Relay--&gt;&gt;Client: Confirm join — send list of connected peers
-    Relay--&gt;&gt;Peers: Notify everyone a new peer joined
-
-    Note left of Client: 2. Sending a message
-    Client-&gt;&gt;Client: Encrypt message for each peer using their public key
-    Client-&gt;&gt;Relay: Send encrypted blob (ciphertext + nonce) to target peer
-    Relay-&gt;&gt;Peers: Forward the encrypted blob — relay never sees plaintext
-    Peers--&gt;&gt;Client: Receive blob, decrypt using own private key
-
-    Note left of Client: 3. Leaving the session
-    Client-&gt;&gt;Relay: Connection closed
-    Relay--&gt;&gt;Peers: Notify everyone this peer left</code></pre>
-<h3 id="joining-the-session">Joining the session<a class="headerlink" href="#joining-the-session" title="Permanent link">&para;</a></h3>
-<p>When a client connects, the browser generates a fresh X25519 keypair using <code>tweetnacl</code>. The private key never leaves the device. The client sends only its public key, nickname, and invite token to the relay. The server validates the invite token, checks the user cap, and responds with a roster of everyone currently connected — including their public keys — so the joining client can start encrypting messages for each of them.</p>
-<h3 id="sending-a-message">Sending a message<a class="headerlink" href="#sending-a-message" title="Permanent link">&para;</a></h3>
-<p>When you send a message, the browser encrypts it separately for each peer using that peer's public key and your private key (NaCl <code>box</code>, XSalsa20-Poly1305). Each encrypted blob — just a ciphertext and a nonce — is sent to the relay, which forwards it to the right recipient. The relay only ever sees opaque Base64-encoded blobs; it has no way to read the content.</p>
-<p>The server applies a few guardrails before forwarding: it rate-limits messages, enforces a 64 KB size cap, and rejects any message missing required fields (<code>publicKey</code>, <code>ciphertext</code>, <code>nonce</code>).</p>
-<h3 id="disconnecting">Disconnecting<a class="headerlink" href="#disconnecting" title="Permanent link">&para;</a></h3>
-<p>When a client disconnects, the relay removes them from the session and notifies remaining peers. If the admin disconnects, a new admin is automatically elected from whoever is still connected.</p>
-<hr />
-<h2 id="setup-usage-guide">Setup &amp; Usage Guide<a class="headerlink" href="#setup-usage-guide" title="Permanent link">&para;</a></h2>
-<h3 id="for-the-admin-running-the-relay-server">For the Admin (Running the Relay Server)<a class="headerlink" href="#for-the-admin-running-the-relay-server" title="Permanent link">&para;</a></h3>
-<p>The admin is responsible for hosting the relay server and sharing the invite token with participants out-of-band.</p>
-<pre class="mermaid"><code>flowchart LR
-    Admin[Admin] --&gt;|starts server| Server[Relay Server]
-    Server --&gt;|generates &amp; prints token| Token[ Share Invite Token with Participants ]</code></pre>
-<p><em>Note</em>: a relay server is just another server that forwards encrypted messages to connected clients.<br>
-<strong>Steps:</strong></p>
-<ol>
-<li>Choose a host machine (a cloud VPS, big cloud provider, etc.)</li>
-<li>Clone the repo and navigate to the <code>java-relay-server</code> directory.</li>
-<li>Ensure Java (JDK) and Maven are installed.</li>
-<li>Inside <code>relay.java</code>, adjust <code>MAX_USERS</code> if needed (default is 5).</li>
-<li>Build the server: <code>mvn clean package</code> from the <code>java-relay-server</code> directory.</li>
-<li>Start the server: <code>java -jar target/relay-server-1.0.0.jar</code></li>
-<li>Share the invite token printed in the server logs with participants.</li>
-</ol>
-<hr />
-<h3 id="for-participants-connecting-as-a-client">For Participants (Connecting as a Client)<a class="headerlink" href="#for-participants-connecting-as-a-client" title="Permanent link">&para;</a></h3>
-<p>Each participant opens the client UI in their browser and connects using the invite token and WebSocket URL provided by the admin.</p>
-<pre class="mermaid"><code>flowchart LR
-    Clients --&gt;|enter token and WebSocket URL in UI| Connect[Connected]</code></pre>
-<p><strong>If using Python:</strong></p>
-<ol>
-<li>Change to the <code>ui</code> directory.</li>
-<li>Run: <code>python3 -m http.server 3000</code></li>
-<li>Open <code>http://localhost:3000</code> in your browser.</li>
-</ol>
-<p><strong>If using Node:</strong></p>
-<ol>
-<li>Change to the <code>ui</code> directory.</li>
-<li>Install live-server: <code>npm install -g live-server</code></li>
-<li>Run: <code>live-server --port=3000</code></li>
-<li>Open <code>http://localhost:3000</code> in your browser.</li>
-</ol>
-<p>Once the UI is open, enter your nickname, the WebSocket URL (e.g. <code>wss://website.com:8080</code>), and the invite token to connect.</p>
-<hr />
-<h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Dependencies</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Server</strong></td>
-<td>Java (JDK) + Maven; Java WebSocket implementation + <code>gson</code> (managed via Maven)</td>
-</tr>
-<tr>
-<td><strong>Client</strong></td>
-<td><code>tweetnacl</code> and <code>tweetnacl-util</code> for browser-side crypto (load from CDN or bundle with a Node build)</td>
-</tr>
-<tr>
-<td><strong>Local serving</strong></td>
-<td>Python (<code>python3 -m http.server</code>) or Node (<code>live-server</code>)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="deploying-with-railway-httpsrailwaycom">Deploying with Railway (https://railway.com)<a class="headerlink" href="#deploying-with-railway-httpsrailwaycom" title="Permanent link">&para;</a></h2>
-<p>We will deploy the relay server on Railway, which provides a simple way to host web applications. The client UI will be served locally.</p>
-<p><strong>Steps to deploy the relay server:</strong></p>
-<ol>
-<li>
-<p>Create a new project on Railway and connect your GitHub repository. Once you select the repository, this will take you to deployment settings.</p>
-<p><img alt="Alt text" src="../images/1.png" /></p>
-</li>
-<li>
-<p>Source section in deployment settings: change source to /java-relay-server</p>
-<p><img alt="Alt text" src="../images/2.png" /></p>
-</li>
-<li>
-<p>Networking section in deployment settings: enable public networking by clicking generate domain.</p>
-</li>
-<li>
-<p>Build section in deployment settings: set the build command to <code>mvn clean package</code></p>
-<p><img alt="Alt text" src="../images/3.png" /></p>
-</li>
-<li>
-<p>Deploy section in deployment settings: set the start command to <code>java -jar target/relay-server-1.0.0.jar</code></p>
-<p><img alt="Alt text" src="../images/4.png" /></p>
-</li>
-<li>
-<p>Press deploy and wait for the deployment to complete.</p>
-</li>
-<li>
-<p>After deployment, view logs (from deployment tab) to find the invite token printed by the server. Share this token with participants.</p>
-<p>In the settings (networking) you will get the public domain for your server, which will be used as the WebSocket URL in the client UI (e.g. <code>your-project.up.railway.app</code>, when using this url, make sure to add the <code>wss://</code> prefix, which becomes <code>wss://your-project.up.railway.app</code>).</p>
-</li>
-</ol>
-<p><strong>Opening the UI</strong>: Follow the steps in the <code>For Participants (Connecting as a Client)</code> section above to serve the client UI locally, and open <code>http://localhost:3000</code> in your browser.
-Add your name, the WebSocket URL from Railway (make sure to add the <code>wss://</code> prefix), and the invite token to connect to the relay server.</p>
-<p><img alt="Alt text" src="../images/5.png" /></p>
-<p>And Voila! You should now be connected to the relay server hosted on Railway, and can start chatting securely with other participants.</p>
-<p><img alt="Alt text" src="../images/6.png" /></p>
-<p>Top left is your public key, and under each participant's name is their public key. This can be used for out-of-band verification to ensure you're communicating with the intended peers.</p>
-<hr />
-<h2 id="things-to-look-out-for-when-using">Things to look out for when using.<a class="headerlink" href="#things-to-look-out-for-when-using" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Disclaimer:</strong> There are quite a few commands in this guide. I do my best to explain them, so use them with caution and understand what they do before running them.</p>
+</blockquote>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Compare public keys in the user interface with out-of-band verification methods to confirm authenticity of the users you're communicating with.</li>
-<li>Ensure the relay runs on HTTPS/WSS; this is the operator's responsibility.</li>
-<li>The relay maintains user connections and stores associated public keys - something to be mindful of.</li>
-<li>Adjust server logs according to privacy requirements.</li>
-<li>Forward secrecy note: As long as clients and the server are not compromised, this provides forward secrecy — past sessions remain private; compromise during an active session still exposes that session.</li>
-<li>There is a message limit of 64 KB.</li>
-<li>Update max users in relay.java.</li>
-<li>The way this is currently set up, each relay server will simulate one chat room. </li>
-<li>If you want to reset the invite token, simply restart the relay server. This will disconnect all clients and generate a new token for the next session.</li>
+<li>A <strong>client device</strong> (laptop, desktop, iPad, iPhone, etc.) with WireGuard installed — this guide assumes you're using the WireGuard GUI app.</li>
+<li>A <strong>personal computer</strong> with an AWS account — this will be used to launch and configure an EC2 instance as your WireGuard VPN server.</li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong> Your personal computer and client device can be the same machine.</p>
+</blockquote>
 <hr />
-<h2 id="future-improvements">Future improvements<a class="headerlink" href="#future-improvements" title="Permanent link">&para;</a></h2>
+<h2 id="step-1-generate-client-keys">Step 1: Generate Client Keys<a class="headerlink" href="#step-1-generate-client-keys" title="Permanent link">&para;</a></h2>
+<p>Download the WireGuard client: https://www.wireguard.com/install/  ( desktop, ipad, iphone, etc. )</p>
+<p>On the client, create a private and public key pair. If you have the GUI, you can use WireGuard's built-in tools (generate keypair in the UI). Share the public key with the server out of band (email, text, etc). The private key should be kept secret and not shared with anyone.
+We will fill the rest of the client configuration in Step 4.</p>
+<blockquote>
+<p><strong>Keep Track Of (for Step 3):</strong> Keep the public key of the client handy.</p>
+</blockquote>
+<hr />
+<h2 id="step-2-set-up-aws-ec2">Step 2: Set Up AWS EC2<a class="headerlink" href="#step-2-set-up-aws-ec2" title="Permanent link">&para;</a></h2>
+<h3 id="create-ec2-instance">Create EC2 Instance<a class="headerlink" href="#create-ec2-instance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instance type: Choose smallest available (e.g. <code>t2.nano</code>)</li>
+<li>OS: Ubuntu Linux</li>
+</ul>
+<h3 id="create-key-pair-for-ssh-access">Create Key Pair for SSH Access<a class="headerlink" href="#create-key-pair-for-ssh-access" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Download the <code>.pem</code> file.</li>
+</ul>
+<h3 id="configure-security-group">Configure Security Group<a class="headerlink" href="#configure-security-group" title="Permanent link">&para;</a></h3>
+<p>In the AWS console, edit inbound rules to add:
+1. <strong>SSH</strong>: Port 22/TCP from your IP
+2. <strong>WireGuard</strong>: Port 51820/UDP from your IP</p>
+<p>Then launch the instance.</p>
+<blockquote>
+<p><strong>Keep Track Of (for Step 3):</strong>
+- <strong>EC2 Public IP</strong> (from AWS console)
+- <strong>Your <code>.pem</code> filename</strong>
+- <strong>SSH command</strong> (from instance → connect → SSH client)</p>
+</blockquote>
+<hr />
+<h2 id="step-3-configure-vpn-server">Step 3: Configure VPN Server<a class="headerlink" href="#step-3-configure-vpn-server" title="Permanent link">&para;</a></h2>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Persist keys</strong>: Use IndexedDB so identity survives refresh on the browser.</li>
-<li><strong>Logging</strong>: Avoid printing <code>INVITE_TOKEN</code> to public logs; show it only to the admin securely.</li>
-<li><strong>Password protection</strong>: Add a password on the login page as an additional security measure.</li>
-<li><strong>Group encryption</strong>: Implement a more efficient group encryption scheme (e.g. Signal's Sender Keys) to avoid encrypting separately for each peer.</li>
+<li>On your local machine, create a folder and either clone <code>https://github.com/Tarun-Elango/vpn-setup-ec2</code> or copy <code>setup-vpn-server.sh</code>, from the repository, into it</li>
+<li>Place your <code>.pem</code>, which you downloaded from AWS, file in the same directory as <code>setup-vpn-server.sh</code></li>
 </ol>
+<h3 id="run-the-setup-commands-in-your-terminal">Run the Setup Commands in your Terminal<a class="headerlink" href="#run-the-setup-commands-in-your-terminal" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Secure the .pem file</span>
+chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>&lt;your-key.pem&gt;
+
+<span class="c1"># Copy script from local machine to EC2</span>
+scp<span class="w"> </span>-i<span class="w"> </span>&lt;your-key.pem&gt;<span class="w"> </span>setup-vpn-server.sh<span class="w"> </span>ubuntu@&lt;EC2-Public-DNS&gt;:/home/ubuntu/
+
+<span class="c1"># SSH into EC2</span>
+ssh<span class="w"> </span>-i<span class="w"> </span>&lt;your-key.pem&gt;<span class="w"> </span>ubuntu@&lt;EC2-Public-DNS&gt;
+
+<span class="w">    </span><span class="c1"># inside EC2, verify script was copied</span>
+<span class="w">    </span>ls<span class="w"> </span>-l<span class="w"> </span>setup-vpn-server.sh
+
+<span class="w">    </span><span class="c1"># inside EC2, make script executable</span>
+<span class="w">    </span>chmod<span class="w"> </span>+x<span class="w"> </span>setup-vpn-server.sh
+
+<span class="w">    </span><span class="c1"># inside EC2, run the setup script with your client public key, the key from step 1</span>
+<span class="w">    </span>sudo<span class="w"> </span>./setup-vpn-server.sh<span class="w"> </span>&lt;client_public_key&gt;
+<span class="w">    </span><span class="c1"># if you dont want to run the script, you can also run the commands in the script one by one</span>
+</code></pre></div>
+<h3 id="what-the-script-does">What the Script Does<a class="headerlink" href="#what-the-script-does" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Installs WireGuard</li>
+<li>Creates <code>/etc/wireguard</code> directory</li>
+<li>Generates server key pair</li>
+<li>Creates <code>wg0.conf</code> configuration</li>
+<li>Enables IP forwarding</li>
+<li>Starts WireGuard service</li>
+</ul>
+<blockquote>
+<p><strong>Keep Track Of (for Step 4):</strong> <strong>Server public key</strong> (printed at the end of the script)</p>
+</blockquote>
+<hr />
+<h2 id="step-4-configure-client">Step 4: Configure Client<a class="headerlink" href="#step-4-configure-client" title="Permanent link">&para;</a></h2>
+<p>Fill in the client configuration, continuing from Step 1, in your WireGuard client app with the following details:</p>
+<p><strong>Interface Settings:</strong>
+- Addresses: <code>10.0.0.2/24</code> — the client's VPN IP address assigned when connecting
+- DNS: <code>1.1.1.1</code></p>
+<p><strong>Peer Settings:</strong>
+- Public key: server public key from Step 3
+- Endpoint: <code>&lt;EC2-Public-IP&gt;:51820</code>
+- Allowed IPs: <code>0.0.0.0/0</code> — routes all traffic through the VPN
+- Persistent keepalive: <code>25</code></p>
+<p>Save and activate the VPN connection in your WireGuard client. You should now be connected to your personal VPN server on AWS EC2!</p>
+<hr />
+<h2 id="security-notes">Security Notes<a class="headerlink" href="#security-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The <code>.pem</code> file should be kept secure and not shared, as it provides SSH access to your EC2 instance.</li>
+<li>This process involves exchanging the public keys of both client and server — this is not a security risk, but keep them secure regardless.</li>
+<li>Security groups should be configured to only allow access from your IP (port 22/TCP for SSH, port 51820/UDP for WireGuard) to minimize exposure to the internet.</li>
+</ul>
 
 
 
