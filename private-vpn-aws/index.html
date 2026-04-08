@@ -710,6 +710,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Step 4: Configure Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peer Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-and-activate-the-vpn-connection-in-your-wireguard-client-you-should-now-be-connected-to-your-personal-vpn-server-on-aws-ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save and activate the VPN connection in your WireGuard client. You should now be connected to your personal VPN server on AWS EC2!
+      
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -926,6 +965,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Step 4: Configure Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peer-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Peer Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-and-activate-the-vpn-connection-in-your-wireguard-client-you-should-now-be-connected-to-your-personal-vpn-server-on-aws-ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save and activate the VPN connection in your WireGuard client. You should now be connected to your personal VPN server on AWS EC2!
+      
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -957,6 +1035,7 @@
 
 
 <h1 id="setup-your-private-vpn-on-aws-ec2-with-wireguard">Setup your private VPN on AWS EC2 with WireGuard<a class="headerlink" href="#setup-your-private-vpn-on-aws-ec2-with-wireguard" title="Permanent link">&para;</a></h1>
+<p><strong><a href="https://github.com/Tarun-Elango/vpn-setup-ec2">GitHub Repository</a></strong></p>
 <p>I decided to watch 'Akira' its been in my watchlist for a while, i found out its available on Mubi, but Mubi mexico and Mubi Brazil. I dont live in either of those countries. The obvious solution was to subscribe to a VPN. But then I thought, this is a perfect excuse to spin up a VPN server on AWS EC2. So here we are, enjoy! </p>
 <p>Edit: i really enjoyed the movie, highly recommend it.</p>
 <h2 id="what-is-a-vpn">What is a VPN?<a class="headerlink" href="#what-is-a-vpn" title="Permanent link">&para;</a></h2>
@@ -1051,17 +1130,26 @@ ssh<span class="w"> </span>-i<span class="w"> </span>&lt;your-key.pem&gt;<span c
 </blockquote>
 <hr />
 <h2 id="step-4-configure-client">Step 4: Configure Client<a class="headerlink" href="#step-4-configure-client" title="Permanent link">&para;</a></h2>
-<p>Fill in the client configuration, continuing from Step 1, in your WireGuard client app with the following details:</p>
-<p><strong>Interface Settings:</strong>
-- Addresses: <code>10.0.0.2/24</code> — the client's VPN IP address assigned when connecting
-- DNS: <code>1.1.1.1</code></p>
-<p><strong>Peer Settings:</strong>
-- Public key: server public key from Step 3
-- Endpoint: <code>&lt;EC2-Public-IP&gt;:51820</code>
-- Allowed IPs: <code>0.0.0.0/0</code> — routes all traffic through the VPN
-- Persistent keepalive: <code>25</code></p>
-<p>Save and activate the VPN connection in your WireGuard client. You should now be connected to your personal VPN server on AWS EC2!</p>
+<p>Fill in the client configuration (continuing from Step 1) in your WireGuard client app:</p>
+<h3 id="interface-settings">Interface Settings<a class="headerlink" href="#interface-settings" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Addresses:</strong> <code>10.0.0.2/24</code><br />
+  (the client's VPN IP address assigned when connecting)</p>
+</li>
+<li>
+<p><strong>DNS:</strong> <code>1.1.1.1</code></p>
+</li>
+</ul>
+<h3 id="peer-settings">Peer Settings<a class="headerlink" href="#peer-settings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Public key:</strong> server public key from Step 3  </li>
+<li><strong>Endpoint:</strong> <code>&lt;EC2-Public-IP&gt;:51820</code>  </li>
+<li><strong>Allowed IPs:</strong> <code>0.0.0.0/0</code> (routes all traffic through the VPN)  </li>
+<li><strong>Persistent keepalive:</strong> <code>25</code></li>
+</ul>
 <hr />
+<h2 id="save-and-activate-the-vpn-connection-in-your-wireguard-client-you-should-now-be-connected-to-your-personal-vpn-server-on-aws-ec2">Save and activate the VPN connection in your WireGuard client. You should now be connected to your personal VPN server on AWS EC2!<a class="headerlink" href="#save-and-activate-the-vpn-connection-in-your-wireguard-client-you-should-now-be-connected-to-your-personal-vpn-server-on-aws-ec2" title="Permanent link">&para;</a></h2>
 <h2 id="security-notes">Security Notes<a class="headerlink" href="#security-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The <code>.pem</code> file should be kept secure and not shared, as it provides SSH access to your EC2 instance.</li>
