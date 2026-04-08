@@ -1057,15 +1057,23 @@ We will fill the rest of the client configuration in Step 4.</p>
 <li>Download the <code>.pem</code> file.</li>
 </ul>
 <h3 id="configure-security-group">Configure Security Group<a class="headerlink" href="#configure-security-group" title="Permanent link">&para;</a></h3>
-<p>In the AWS console, edit inbound rules to add:
-1. <strong>SSH</strong>: Port 22/TCP from your IP
-2. <strong>WireGuard</strong>: Port 51820/UDP from your IP</p>
+<p>In the AWS console, edit inbound rules to add:</p>
+<ul>
+<li>
+<p><strong>SSH</strong> - Port 22/TCP from your IP</p>
+</li>
+<li>
+<p><strong>WireGuard</strong> - Port 51820/UDP from your IP</p>
+</li>
+</ul>
 <p>Then launch the instance.</p>
 <blockquote>
-<p><strong>Keep Track Of (for Step 3):</strong>
-- <strong>EC2 Public IP</strong> (from AWS console)
-- <strong>Your <code>.pem</code> filename</strong>
-- <strong>SSH command</strong> (from instance → connect → SSH client)</p>
+<p><strong>Keep Track Of (for Step 3):</strong></p>
+<ul>
+<li><strong>EC2 Public IP</strong> (from AWS console select your instance → public IPv4 address)</li>
+<li><strong>Your <code>.pem</code> filename</strong></li>
+<li><strong>SSH command</strong> (from aws console select your instance → connect → SSH client)</li>
+</ul>
 </blockquote>
 <hr />
 <h2 id="step-3-configure-vpn-server">Step 3: Configure VPN Server<a class="headerlink" href="#step-3-configure-vpn-server" title="Permanent link">&para;</a></h2>
