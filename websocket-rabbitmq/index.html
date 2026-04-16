@@ -13,10 +13,8 @@
       
       
       
-        <link rel="prev" href="../load-balancer-on-railway/">
+        <link rel="prev" href="../private-vpn-aws/">
       
-      
-        <link rel="next" href="../websocket-rabbitmq/">
       
       
         
@@ -27,7 +25,7 @@
     
     
       
-        <title>private VPN on AWS EC2 - Tarun's Research Corner</title>
+        <title>How to Horizontally Scale WebSocket Servers Using RabbitMQ - Tarun's Research Corner</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setup-your-private-vpn-on-aws-ec2-with-wireguard" class="md-skip">
+        <a href="#how-to-horizontally-scale-websocket-servers-using-rabbitmq" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              private VPN on AWS EC2
+              How to Horizontally Scale WebSocket Servers Using RabbitMQ
             
           </span>
         </div>
@@ -497,6 +495,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../private-vpn-aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    private VPN on AWS EC2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -516,7 +542,7 @@
   <span class="md-ellipsis">
     
   
-    private VPN on AWS EC2
+    How to Horizontally Scale WebSocket Servers Using RabbitMQ
   
 
     
@@ -534,7 +560,7 @@
   <span class="md-ellipsis">
     
   
-    private VPN on AWS EC2
+    How to Horizontally Scale WebSocket Servers Using RabbitMQ
   
 
     
@@ -560,10 +586,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-vpn" class="md-nav__link">
+  <a href="#about" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is a VPN?
+        About
       
     </span>
   </a>
@@ -571,55 +597,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-this-guide-is-about" class="md-nav__link">
+  <a href="#architecture-explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What this guide is about
+        Architecture Explanation
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-generate-client-keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Generate Client Keys
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-set-up-aws-ec2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Set Up AWS EC2
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 2: Set Up AWS EC2">
+    <nav class="md-nav" aria-label="Architecture Explanation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-ec2-instance" class="md-nav__link">
+  <a href="#server-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create EC2 Instance
+        Server Behavior
       
     </span>
   </a>
@@ -627,10 +620,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-key-pair-for-ssh-access" class="md-nav__link">
+  <a href="#rabbitmq-delivery-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create Key Pair for SSH Access
+        RabbitMQ Delivery Model
       
     </span>
   </a>
@@ -638,10 +631,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configure-security-group" class="md-nav__link">
+  <a href="#state-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configure Security Group
+        State Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-topic-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Topic Flow
       
     </span>
   </a>
@@ -654,22 +669,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-configure-vpn-server" class="md-nav__link">
+  <a href="#testing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Configure VPN Server
+        Testing
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 3: Configure VPN Server">
+    <nav class="md-nav" aria-label="Testing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#1-deploy-rabbitmq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup
+        1. Deploy RabbitMQ
       
     </span>
   </a>
@@ -677,10 +692,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#run-the-setup-commands-in-your-terminal" class="md-nav__link">
+  <a href="#2-deploy-server-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run the Setup Commands in your Terminal
+        2. Deploy Server Instances
       
     </span>
   </a>
@@ -688,10 +703,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-the-script-does" class="md-nav__link">
+  <a href="#3-test-with-the-browser-client" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What the Script Does
+        3. Test with the Browser Client
       
     </span>
   </a>
@@ -700,56 +715,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-configure-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Configure Client
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 4: Configure Client">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#interface-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interface Settings
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#peer-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Peer Settings
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security Notes
-      
-    </span>
-  </a>
   
 </li>
       
@@ -757,34 +722,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../websocket-rabbitmq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    How to Horizontally Scale WebSocket Servers Using RabbitMQ
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -832,10 +769,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-vpn" class="md-nav__link">
+  <a href="#about" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is a VPN?
+        About
       
     </span>
   </a>
@@ -843,55 +780,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-this-guide-is-about" class="md-nav__link">
+  <a href="#architecture-explanation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What this guide is about
+        Architecture Explanation
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-generate-client-keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Generate Client Keys
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-set-up-aws-ec2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Set Up AWS EC2
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 2: Set Up AWS EC2">
+    <nav class="md-nav" aria-label="Architecture Explanation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-ec2-instance" class="md-nav__link">
+  <a href="#server-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create EC2 Instance
+        Server Behavior
       
     </span>
   </a>
@@ -899,10 +803,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-key-pair-for-ssh-access" class="md-nav__link">
+  <a href="#rabbitmq-delivery-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create Key Pair for SSH Access
+        RabbitMQ Delivery Model
       
     </span>
   </a>
@@ -910,10 +814,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configure-security-group" class="md-nav__link">
+  <a href="#state-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configure Security Group
+        State Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-topic-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Topic Flow
       
     </span>
   </a>
@@ -926,22 +852,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-configure-vpn-server" class="md-nav__link">
+  <a href="#testing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Configure VPN Server
+        Testing
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 3: Configure VPN Server">
+    <nav class="md-nav" aria-label="Testing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#1-deploy-rabbitmq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup
+        1. Deploy RabbitMQ
       
     </span>
   </a>
@@ -949,10 +875,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#run-the-setup-commands-in-your-terminal" class="md-nav__link">
+  <a href="#2-deploy-server-instances" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run the Setup Commands in your Terminal
+        2. Deploy Server Instances
       
     </span>
   </a>
@@ -960,10 +886,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-the-script-does" class="md-nav__link">
+  <a href="#3-test-with-the-browser-client" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What the Script Does
+        3. Test with the Browser Client
       
     </span>
   </a>
@@ -972,56 +898,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-configure-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Configure Client
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 4: Configure Client">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#interface-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interface Settings
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#peer-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Peer Settings
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security Notes
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1042,136 +918,237 @@
 
 
 
-<h1 id="setup-your-private-vpn-on-aws-ec2-with-wireguard">Setup your private VPN on AWS EC2 with WireGuard<a class="headerlink" href="#setup-your-private-vpn-on-aws-ec2-with-wireguard" title="Permanent link">&para;</a></h1>
-<p><strong><a href="https://github.com/Tarun-Elango/vpn-setup-ec2">GitHub Repository</a></strong></p>
-<p>I decided to watch 'Akira' its been in my watchlist for a while, i found out its available on Mubi, but Mubi mexico and Mubi Brazil. I dont live in either of those countries. The obvious solution was to subscribe to a VPN. But then I thought, this is a perfect excuse to spin up a VPN server on AWS EC2. So here we are, enjoy! </p>
-<p>Edit: i really enjoyed the movie, highly recommend it.</p>
-<h2 id="what-is-a-vpn">What is a VPN?<a class="headerlink" href="#what-is-a-vpn" title="Permanent link">&para;</a></h2>
-<p>When you browse the internet normally, your traffic travels directly from your device to whatever website or service you're visiting — and along the way, your Internet Service Provider, network administrators, or anyone monitoring the network can see what you're doing and where you're connecting from.
-A VPN (Virtual Private Network) creates an encrypted tunnel between your device and a server. All your internet traffic gets routed through that server first, so to the outside world it looks like the traffic is coming from the server, not from you.</p>
-<h2 id="what-this-guide-is-about">What this guide is about<a class="headerlink" href="#what-this-guide-is-about" title="Permanent link">&para;</a></h2>
-<p>In this guide we're building our own personal VPN from scratch using:</p>
-<ul>
-<li><strong>AWS EC2</strong> — a cloud server that you own and control (choose your preferred region)</li>
-<li><strong>WireGuard</strong> — an open source VPN protocol (https://www.wireguard.com)</li>
-</ul>
-<blockquote>
-<p><strong>Disclaimer:</strong> There are quite a few commands in this guide. I do my best to explain them, so use them with caution and understand what they do before running them.</p>
-</blockquote>
-<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<ul>
-<li>A <strong>client device</strong> (laptop, desktop, iPad, iPhone, etc.) with WireGuard installed — this guide assumes you're using the WireGuard GUI app.</li>
-<li>A <strong>personal computer</strong> with an AWS account — this will be used to launch and configure an EC2 instance as your WireGuard VPN server.</li>
-</ul>
-<blockquote>
-<p><strong>Note:</strong> Your personal computer and client device can be the same machine.</p>
-</blockquote>
+<h1 id="how-to-horizontally-scale-websocket-servers-using-rabbitmq">How to Horizontally Scale WebSocket Servers Using RabbitMQ.<a class="headerlink" href="#how-to-horizontally-scale-websocket-servers-using-rabbitmq" title="Permanent link">&para;</a></h1>
+<p><strong><a href="https://github.com/Tarun-Elango/Node-WebSocket-Server-with-RabbitMQ">GitHub Repository</a></strong></p>
+<h2 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h2>
+<p><strong>Why do we need this?</strong> Say we have a chat app that connects to a WebSocket server. The websocket connection is stateful, i.e the server needs to remember which clients are subscribed to which topics. If we want to scale this app horizontally across multiple server instances, we need a way for those instances to share topic membership and publish messages to each other. </p>
+<p><strong>Example:</strong> Alice connects to Node 1 and subscribes to <code>sports</code>. Bob connects to Node 2 and also subscribes to <code>sports</code>. If Alice publishes a message to <code>sports</code>, how does that message get to Bob if they are connected to different server nodes?</p>
+<p><strong>Solution:</strong> We use RabbitMQ as the message broker. On server start, the server connects to RabbitMQ and creates a unique queue for that node in RabbitMQ. When a client subscribes to a topic ( or a room ) on that node, the server binds its queue to that topic. When a message is published to a topic, RabbitMQ fans it out to every server node that has its queue bound to the topic. Each server node then forwards the message only to its own local clients for that topic.</p>
+<p>This way we can run multiple instances of this WebSocket server, and ensure all the clients receive the messages regardless of which node they are connected to.</p>
+<p><br></p>
 <hr />
-<h2 id="step-1-generate-client-keys">Step 1: Generate Client Keys<a class="headerlink" href="#step-1-generate-client-keys" title="Permanent link">&para;</a></h2>
-<p>Download the WireGuard client: https://www.wireguard.com/install/  ( desktop, ipad, iphone, etc. )</p>
-<p>On the client, create a private and public key pair. If you have the GUI, you can use WireGuard's built-in tools (generate keypair in the UI). Share the public key with the server out of band (email, text, etc). The private key should be kept secret and not shared with anyone.
-We will fill the rest of the client configuration in Step 4.</p>
-<blockquote>
-<p><strong>Keep Track Of (for Step 3):</strong> Keep the public key of the client handy.</p>
-</blockquote>
-<hr />
-<h2 id="step-2-set-up-aws-ec2">Step 2: Set Up AWS EC2<a class="headerlink" href="#step-2-set-up-aws-ec2" title="Permanent link">&para;</a></h2>
-<h3 id="create-ec2-instance">Create EC2 Instance<a class="headerlink" href="#create-ec2-instance" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Region: Choose the region of your choice (e.g. <code>us-east-1</code> from console)</li>
-<li>Instance type: Choose smallest available (e.g. <code>t2.nano</code>)</li>
-<li>OS: Ubuntu Linux</li>
-</ul>
-<h3 id="create-key-pair-for-ssh-access">Create Key Pair for SSH Access<a class="headerlink" href="#create-key-pair-for-ssh-access" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Download the <code>.pem</code> file.</li>
-</ul>
-<h3 id="configure-security-group">Configure Security Group<a class="headerlink" href="#configure-security-group" title="Permanent link">&para;</a></h3>
-<p>In the AWS console, edit inbound rules to add:</p>
-<ul>
-<li>
-<p><strong>SSH</strong> - Port 22/TCP from your IP</p>
-</li>
-<li>
-<p><strong>WireGuard</strong> - Port 51820/UDP from your IP</p>
-</li>
-</ul>
-<p>Then launch the instance.</p>
-<blockquote>
-<p><strong>Keep Track Of (for Step 3):</strong></p>
-<ul>
-<li><strong>EC2 Public IP</strong> (from AWS console select your instance → public IPv4 address)</li>
-<li><strong>Your <code>.pem</code> filename</strong></li>
-<li><strong>SSH command</strong> (from aws console select your instance → connect → SSH client)</li>
-</ul>
-</blockquote>
-<hr />
-<h2 id="step-3-configure-vpn-server">Step 3: Configure VPN Server<a class="headerlink" href="#step-3-configure-vpn-server" title="Permanent link">&para;</a></h2>
-<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<h2 id="architecture-explanation">Architecture Explanation<a class="headerlink" href="#architecture-explanation" title="Permanent link">&para;</a></h2>
+<h3 id="server-behavior">Server Behavior<a class="headerlink" href="#server-behavior" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Behavior</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>On connect</td>
+<td>New clients automatically join the <code>lobby</code> topic</td>
+</tr>
+<tr>
+<td>Subscriptions</td>
+<td>Clients can join or leave topics anytime</td>
+</tr>
+<tr>
+<td>State</td>
+<td>Each node only tracks its own connected clients</td>
+</tr>
+<tr>
+<td>Plain text messages</td>
+<td>Automatically sent to the <code>lobby</code> topic</td>
+</tr>
+<tr>
+<td>Cross-node messaging</td>
+<td>Nodes share messages through RabbitMQ only</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rabbitmq-delivery-model">RabbitMQ Delivery Model<a class="headerlink" href="#rabbitmq-delivery-model" title="Permanent link">&para;</a></h3>
+<p>Each node owns one exclusive RabbitMQ queue. Topic bindings on that queue are added and removed dynamically as local clients subscribe and unsubscribe.</p>
+<p><strong>Server startup:</strong> When a node starts, it connects to RabbitMQ and creates a unique, exclusive queue for itself. This queue serves as the node's message inbox for all topics its clients are subscribed to.</p>
+<p><strong>Client joins a topic (binding process):</strong> When a client subscribes to a topic on a node, the server immediately binds that node's queue to the topic's routing key in RabbitMQ. This tells RabbitMQ to start routing messages with that topic to this node's queue. If multiple clients on the same node subscribe to the same topic, the binding only happens once (the binding is already in place).</p>
+<p><strong>Message flow (client publish → all subscribers):</strong></p>
 <ol>
-<li>On your local machine, create a folder and either clone <code>https://github.com/Tarun-Elango/vpn-setup-ec2</code> or copy <code>setup-vpn-server.sh</code>, from the repository, into it</li>
-<li>Place your <code>.pem</code>, which you downloaded from AWS, file in the same directory as <code>setup-vpn-server.sh</code></li>
+<li>Client sends a <code>publish</code> action to its connected node.</li>
+<li>That node publishes once to the RabbitMQ topic exchange.</li>
+<li>RabbitMQ copies the message to every node queue bound to that topic.</li>
+<li>Each node consumes from its own queue and forwards the message to its local subscribers.</li>
 </ol>
-<h3 id="run-the-setup-commands-in-your-terminal">Run the Setup Commands in your Terminal<a class="headerlink" href="#run-the-setup-commands-in-your-terminal" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Secure the .pem file</span>
-chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>&lt;your-key.pem&gt;
+<p><strong>Why bindings are dynamic — topic <code>sports</code> example:</strong></p>
+<p>Node 2 only binds its queue to <code>sports</code> <em>while</em> Bob (a local client) is subscribed. When Bob unsubscribes, Node 2 removes the binding to stop wasting broker resources:</p>
+<div class="highlight"><pre><span></span><code>State 1: Both nodes have subscribers
+  Node 1 queue ← sports
+  Node 2 queue ← sports
 
-<span class="c1"># Copy script from local machine to EC2</span>
-scp<span class="w"> </span>-i<span class="w"> </span>&lt;your-key.pem&gt;<span class="w"> </span>setup-vpn-server.sh<span class="w"> </span>ubuntu@&lt;EC2-Public-DNS&gt;:/home/ubuntu/
-
-<span class="c1"># SSH into EC2</span>
-ssh<span class="w"> </span>-i<span class="w"> </span>&lt;your-key.pem&gt;<span class="w"> </span>ubuntu@&lt;EC2-Public-DNS&gt;
-
-<span class="w">    </span><span class="c1"># inside EC2, verify script was copied</span>
-<span class="w">    </span>ls<span class="w"> </span>-l<span class="w"> </span>setup-vpn-server.sh
-
-<span class="w">    </span><span class="c1"># inside EC2, make script executable</span>
-<span class="w">    </span>chmod<span class="w"> </span>+x<span class="w"> </span>setup-vpn-server.sh
-
-<span class="w">    </span><span class="c1"># inside EC2, run the setup script with your client public key, the key from step 1</span>
-<span class="w">    </span>sudo<span class="w"> </span>./setup-vpn-server.sh<span class="w"> </span>&lt;client_public_key&gt;
-<span class="w">    </span><span class="c1"># if you dont want to run the script, you can also run the commands in the script one by one</span>
+State 2: Bob unsubscribes (Node 2&#39;s only sports subscriber)
+  Node 1 queue ← sports
+  Node 2 queue ← (removed: no local subscribers)
 </code></pre></div>
-<h3 id="what-the-script-does">What the Script Does<a class="headerlink" href="#what-the-script-does" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Installs WireGuard</li>
-<li>Creates <code>/etc/wireguard</code> directory</li>
-<li>Generates server key pair</li>
-<li>Creates <code>wg0.conf</code> configuration</li>
-<li>Enables IP forwarding</li>
-<li>Starts WireGuard service</li>
-</ul>
-<blockquote>
-<p><strong>Keep Track Of (for Step 4):</strong> <strong>Server public key</strong> (printed at the end of the script)</p>
-</blockquote>
+<p>After unbinding, new <code>sports</code> publishes only go to Node 1's queue.</p>
+<h3 id="state-layout">State Layout<a class="headerlink" href="#state-layout" title="Permanent link">&para;</a></h3>
+<p>The server maintains two complementary data structures in memory:</p>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Location</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>topicSubscribers</code></td>
+<td>On the server</td>
+<td>Map: topic → all local WebSocket clients subscribed to it</td>
+</tr>
+<tr>
+<td><code>ws.subscriptions</code></td>
+<td>On each client connection</td>
+<td>Set: all topics that client has joined</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why two structures?</strong> One answers "who's subscribed to topic X?" and the other answers "what topics is client Y in?"</p>
+<p><strong>Example state</strong> after Alice (Node 1) and Bob (Node 2) both subscribe to <code>sports</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Server-level maps</span>
+<span class="nx">node1</span><span class="p">.</span><span class="nx">topicSubscribers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">lobby</span><span class="o">:</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">wsAlice</span><span class="p">),</span><span class="w"> </span><span class="nx">sports</span><span class="o">:</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">wsAlice</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<span class="nx">node2</span><span class="p">.</span><span class="nx">topicSubscribers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">lobby</span><span class="o">:</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">wsBob</span><span class="p">),</span><span class="w">   </span><span class="nx">sports</span><span class="o">:</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="nx">wsBob</span><span class="p">)</span><span class="w">   </span><span class="p">}</span>
+
+<span class="c1">// Per-connection sets ( inside the server )</span>
+<span class="nx">wsAlice</span><span class="p">.</span><span class="nx">subscriptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="s1">&#39;lobby&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;sports&#39;</span><span class="p">)</span>
+<span class="nx">wsBob</span><span class="p">.</span><span class="nx">subscriptions</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">Set</span><span class="p">(</span><span class="s1">&#39;lobby&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;sports&#39;</span><span class="p">)</span>
+
+<span class="c1">// RabbitMQ queue bindings</span>
+<span class="nx">node1Queue</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;lobby&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;sports&#39;</span><span class="p">]</span>
+<span class="nx">node2Queue</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;lobby&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;sports&#39;</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="message-protocol">Message Protocol<a class="headerlink" href="#message-protocol" title="Permanent link">&para;</a></h3>
+<p>The server accepts two types of client messages:</p>
+<p><strong>1. Simple messaging</strong> — Plain text messages are automatically published to the <code>lobby</code> topic and delivered to all connected clients.</p>
+<p><strong>2. Topic-based messaging</strong> — Send JSON messages to join/leave topics or broadcast to a specific audience:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>subscribe</code></td>
+<td>Join a topic to receive all messages sent to it</td>
+<td><code>{ "action": "subscribe", "topic": "sports" }</code></td>
+</tr>
+<tr>
+<td><code>unsubscribe</code></td>
+<td>Leave a topic and stop receiving its messages</td>
+<td><code>{ "action": "unsubscribe", "topic": "sports" }</code></td>
+</tr>
+<tr>
+<td><code>publish</code></td>
+<td>Send a message to a specific topic</td>
+<td><code>{ "action": "publish", "topic": "sports", "message": "Hello room" }</code></td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>Get all topics you're currently subscribed to</td>
+<td><code>{ "action": "list" }</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-topic-flow">Example Topic Flow<a class="headerlink" href="#example-topic-flow" title="Permanent link">&para;</a></h3>
+<p>This example shows the same topic named <code>sports</code>, but with the two clients connected to different WebSocket nodes. The local WebSocket nodes do not talk to each other directly. RabbitMQ is the bridge between them.</p>
+<pre class="mermaid"><code>sequenceDiagram
+        box Node 1
+            participant A as Client A (Alice)
+            participant S1 as WebSocket Node 1
+        end
+
+        participant MQ as RabbitMQ Topic Exchange
+
+        box Node 2
+            participant S2 as WebSocket Node 2
+            participant B as Client B (Bob)
+        end
+
+        A-&gt;&gt;S1: Connect with ?name=Alice
+        S1--&gt;&gt;A: Welcome, Alice!
+        S1--&gt;&gt;A: System: Subscribed to "lobby"
+
+        B-&gt;&gt;S2: Connect with ?name=Bob
+        S2--&gt;&gt;B: Welcome, Bob!
+        S2--&gt;&gt;B: System: Subscribed to "lobby"
+
+        A-&gt;&gt;S1: { action: "subscribe", topic: "sports" }
+        S1-&gt;&gt;MQ: Bind Node 1 queue to routing key sports
+        S1--&gt;&gt;A: System: Subscribed to "sports"
+
+        B-&gt;&gt;S2: { action: "subscribe", topic: "sports" }
+        S2-&gt;&gt;MQ: Bind Node 2 queue to routing key sports
+        S2--&gt;&gt;B: System: Subscribed to "sports"
+
+        A-&gt;&gt;S1: { action: "publish", topic: "sports", message: "Hello" }
+        S1-&gt;&gt;MQ: Publish message with routing key sports
+        MQ--&gt;&gt;S1: Deliver to Node 1 queue
+        MQ--&gt;&gt;S2: Deliver to Node 2 queue
+        S1--&gt;&gt;A: [sports] Alice: Hello
+        S2--&gt;&gt;B: [sports] Alice: Hello
+
+        B-&gt;&gt;S2: { action: "unsubscribe", topic: "sports" }
+        S2-&gt;&gt;MQ: Unbind sports if Bob was last local subscriber
+        S2--&gt;&gt;B: System: Unsubscribed from "sports"
+
+        A-&gt;&gt;S1: { action: "publish", topic: "sports", message: "Still there?" }
+        S1-&gt;&gt;MQ: Publish message with routing key sports
+        MQ--&gt;&gt;S1: Deliver to Node 1 queue
+        S1--&gt;&gt;A: [sports] Alice: Still there?</code></pre>
+<p>left to right flow:</p>
+<ol>
+<li>Each node keeps only its own local client connections.</li>
+<li>Each node binds its RabbitMQ queue to a topic only when that node has at least one local subscriber for that topic.</li>
+<li>Publishing goes to RabbitMQ once.</li>
+<li>RabbitMQ fans the message out to every node queue currently bound to that topic.</li>
+<li>Each node then sends the message only to its own connected clients for that topic.</li>
+</ol>
+<p><br></p>
 <hr />
-<h2 id="step-4-configure-client">Step 4: Configure Client<a class="headerlink" href="#step-4-configure-client" title="Permanent link">&para;</a></h2>
-<p>Fill in the client configuration (continuing from Step 1) in your WireGuard client app:</p>
-<h3 id="interface-settings">Interface Settings<a class="headerlink" href="#interface-settings" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Addresses:</strong> <code>10.0.0.2/24</code><br />
-  (the client's VPN IP address assigned when connecting)</p>
-</li>
-<li>
-<p><strong>DNS:</strong> <code>1.1.1.1</code></p>
-</li>
-</ul>
-<h3 id="peer-settings">Peer Settings<a class="headerlink" href="#peer-settings" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Public key:</strong> server public key from Step 3  </li>
-<li><strong>Endpoint:</strong> <code>&lt;EC2-Public-IP&gt;:51820</code>  </li>
-<li><strong>Allowed IPs:</strong> <code>0.0.0.0/0</code> (routes all traffic through the VPN)  </li>
-<li><strong>Persistent keepalive:</strong> <code>25</code></li>
-</ul>
-<p>Save and activate the VPN connection in your WireGuard client. You should now be connected to your personal VPN server on AWS EC2!</p>
-<hr />
-<h2 id="security-notes">Security Notes<a class="headerlink" href="#security-notes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>The <code>.pem</code> file should be kept secure and not shared, as it provides SSH access to your EC2 instance.</li>
-<li>This process involves exchanging the public keys of both client and server — this is not a security risk, but keep them secure regardless.</li>
-<li>Security groups should be configured to only allow access from your IP (port 22/TCP for SSH, port 51820/UDP for WireGuard) to minimize exposure to the internet.</li>
-</ul>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<p>To test cross-node messaging, you need at least two server instances connected to the same RabbitMQ instance. The steps below use Railway to deploy them, but any hosting provider works.</p>
+<h3 id="1-deploy-rabbitmq">1. Deploy RabbitMQ<a class="headerlink" href="#1-deploy-rabbitmq" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to Railway dashboard → <strong>New Project</strong> → <strong>Deploy from Docker Image</strong></li>
+<li>Enter image: <code>rabbitmq:3-management</code></li>
+<li>Set environment variables:</li>
+<li><code>RABBITMQ_DEFAULT_USER=admin</code></li>
+<li><code>RABBITMQ_DEFAULT_PASS=strongpassword</code></li>
+<li><code>RABBITMQ_DEFAULT_VHOST=/</code> (allows multiple apps to coexist)</li>
+<li><em>(Optional)</em> For the management UI, create a public URL in <strong>Settings → Network</strong> and expose port <code>15672</code></li>
+<li>Add a volume at <code>/var/lib/rabbitmq</code> for data persistence:</li>
+<li>On the dashboard, create a new volume</li>
+<li>Select the RabbitMQ instance</li>
+<li>Add the path <code>/var/lib/rabbitmq</code> and deploy</li>
+</ol>
+<h3 id="2-deploy-server-instances">2. Deploy Server Instances<a class="headerlink" href="#2-deploy-server-instances" title="Permanent link">&para;</a></h3>
+<p>For each server instance (repeat steps for Server 1 and Server 2):</p>
+<ol>
+<li>Create a new service → <strong>Deploy from Git</strong> (select this repo)</li>
+<li>Railway auto-detects the Dockerfile and builds the image</li>
+<li>In <strong>Settings → Network</strong>, create a public URL (you'll need this for client testing)</li>
+<li>In <strong>Variables</strong>, add:</li>
+<li><code>RABBITMQ_URL=amqp://admin:strongpassword@rabbitmq.railway.internal:5672</code></li>
+<li>(Replace hostname with your RabbitMQ internal URL if different, you can find this in the RabbitMQ service's network settings)</li>
+<li>Deploy the service</li>
+</ol>
+<p>Repeat the same steps and create a second server instance to test multi-node messaging.
+After these steps, you should have two WebSocket server instances running, with their own public URLs, both connected to the same RabbitMQ instance.</p>
+<p><img alt="Alt text" src="../images/rabbitMq/1.png" />  <!-- showing rabbitmq and two server instances in railway dashboard --></p>
+<h3 id="3-test-with-the-browser-client">3. Test with the Browser Client<a class="headerlink" href="#3-test-with-the-browser-client" title="Permanent link">&para;</a></h3>
+<p>A full browser client is included in <code>index.html</code> in the <a href="https://github.com/Tarun-Elango/Node-WebSocket-Server-with-RabbitMQ">repository</a>. Serve it locally using Python (<code>python3 -m http.server</code>) or Node (<code>npx http-server</code>), then open <code>http://localhost:8000</code> in your browser.</p>
+<ol>
+<li>Enter the public URL of Server 1 (e.g., <code>wss://your-server-1-url.railway.app</code>), enter your name, and click <strong>Join</strong></li>
+<li>Open a second tab, connect to Server 2's public URL with a different name, and click <strong>Join</strong></li>
+<li>Subscribe to the same topic (e.g., <code>sports</code>) in both tabs</li>
+<li>Send a message from one tab — it will appear in the other, proving cross-node communication works</li>
+<li>Unsubscribe from the topic in one tab and verify new messages stop arriving there</li>
+</ol>
+<p>Check server logs to verify that RabbitMQ is routing messages and that topic bindings are dynamically added/removed as clients subscribe/unsubscribe.</p>
 
 
 
